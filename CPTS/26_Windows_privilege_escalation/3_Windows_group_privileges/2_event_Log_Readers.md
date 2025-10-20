@@ -7,6 +7,8 @@ Cuando está activado el [*auditing* (registro) de la creación de procesos](htt
 
 El texto menciona ejemplos de comandos que atacantes suelen ejecutar tras obtener acceso (por ejemplo: `tasklist`, `ver`, `ipconfig`, `systeminfo`), comandos para reconocimiento (`dir`, `net view`, `ping`, `net use`, `type`) y comandos usados para movimiento lateral o ejecución de tareas (`at`, `reg`, `wmic`, `wusa`).
 
+`Nota`: [Estudio sobre comandos mas utilizados por atacantes](https://blogs.jpcert.or.jp/en/2016/01/windows-commands-abused-by-attackers.html)
+
 También se menciona que, además de monitorizar, una organización puede restringir la ejecución de comandos mediante reglas afinadas de AppLocker.
 
 ---
