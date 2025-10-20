@@ -3,7 +3,7 @@
 
 ## Contexto general
 
-Cuando está activado el *auditing* (registro) de la creación de procesos y la captura de la línea de comando correspondiente, Windows guarda esa información en el registro de seguridad como el **evento ID 4688: "A new process has been created"**. Esto permite a los defensores ver qué binarios se ejecutan y con qué parámetros — por ejemplo, si el parámetro contiene una contraseña. Estos eventos pueden exportarse a un SIEM o a una herramienta de búsqueda (por ejemplo ElasticSearch) para detectar actividad sospechosa.
+Cuando está activado el [*auditing* (registro) de la creación de procesos](https://learn.microsoft.com/es-es/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/audit-process-creation) y la captura de la línea de comando correspondiente, Windows guarda esa información en el registro de seguridad como el [**evento ID 4688: "A new process has been created"**](https://learn.microsoft.com/es-es/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4688). Esto permite a los defensores ver qué binarios se ejecutan y con qué parámetros — por ejemplo, si el parámetro contiene una contraseña. Estos eventos pueden exportarse a un SIEM o a una herramienta de búsqueda (por ejemplo ElasticSearch) para detectar actividad sospechosa.
 
 El texto menciona ejemplos de comandos que atacantes suelen ejecutar tras obtener acceso (por ejemplo: `tasklist`, `ver`, `ipconfig`, `systeminfo`), comandos para reconocimiento (`dir`, `net view`, `ping`, `net use`, `type`) y comandos usados para movimiento lateral o ejecución de tareas (`at`, `reg`, `wmic`, `wusa`).
 
