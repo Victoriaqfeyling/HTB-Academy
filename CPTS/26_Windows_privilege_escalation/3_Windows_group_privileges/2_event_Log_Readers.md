@@ -52,7 +52,7 @@ Microsoft publica referencia de comandos integrados y muchos aceptan contraseña
 
 ## Consultar eventos con `wevtutil`
 
-El texto muestra que podemos consultar eventos desde la línea de comandos con `wevtutil`. Ejemplo en el texto:
+El texto muestra que podemos consultar eventos desde la línea de comandos con [`wevtutil`](https://learn.microsoft.com/es-es/windows-server/administration/windows-commands/wevtutil). Ejemplo en el texto:
 
 ```powershell
 PS C:\htb> wevtutil qe Security /rd:true /f:text | Select-String "/user"
