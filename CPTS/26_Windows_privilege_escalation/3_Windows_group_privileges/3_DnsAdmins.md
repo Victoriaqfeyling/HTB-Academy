@@ -153,6 +153,9 @@ Command completed successfully.
 
 ```cmd
 wmic useraccount where name="netadm" get sid
+
+SID
+S-1-5-21-669053619-2741956077-1013132368-1109
 ```
 
 * `wmic useraccount where name="..." get sid` devuelve el SID del usuario `netadm`.
