@@ -131,7 +131,7 @@ El texto menciona que el cmdlet `Get-WinEvent` puede ejecutarse como otro usuari
 
 ## Otros logs: *PowerShell Operational*
 
-El texto finaliza indicando que el *PowerShell Operational log* puede contener información sensible (por ejemplo si está habilitado *script block logging* o *module logging*), y que ese registro **es accesible por usuarios sin privilegios**. Esto lo distingue del registro de seguridad, ya que puede ofrecer otra vía para encontrar comandos o credenciales si está habilitado el tipo de logging que captura el contenido de los scripts.
+El texto finaliza indicando que el [*PowerShell Operational log*](https://learn.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7.5&viewFallbackFrom=powershell-7.1) puede contener información sensible (por ejemplo si está habilitado *script block logging* o *module logging*), y que ese registro **es accesible por usuarios sin privilegios**. Esto lo distingue del registro de seguridad, ya que puede ofrecer otra vía para encontrar comandos o credenciales si está habilitado el tipo de logging que captura el contenido de los scripts.
 
 ---
 
