@@ -100,7 +100,7 @@ Command failed: ERROR_ACCESS_DENIED
 * Resultado esperado para usuario normal: `ERROR_ACCESS_DENIED` (Status = 5). El servicio DNS no permite que usuarios no miembros de `DnsAdmins` cambien esa configuración.
 
 ---
-
+## Caso contrario se tienen privilegios
 ## Confirmar pertenencia a `DnsAdmins`
 
 Comando PowerShell mostrado:
