@@ -134,4 +134,23 @@ El texto menciona que el cmdlet `Get-WinEvent` puede ejecutarse como otro usuari
 El texto finaliza indicando que el [*PowerShell Operational log*](https://learn.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7.5&viewFallbackFrom=powershell-7.1) puede contener información sensible (por ejemplo si está habilitado *script block logging* o *module logging*), y que ese registro **es accesible por usuarios sin privilegios**. Esto lo distingue del registro de seguridad, ya que puede ofrecer otra vía para encontrar comandos o credenciales si está habilitado el tipo de logging que captura el contenido de los scripts.
 
 ---
+## Laboratorio
+
+#### Utilizando los métodos demostrados en esta sección, busque la contraseña del usuario mary.
+`ip`:10.129.43.43 
+`usuario`:logger
+`contraseña`:HTB_@cademy_stdnt!
+
+
+Nos conectamos al host por RDP:
+
+```bash
+xfreerdp3 /v:10.129.43.43 /u:logger
+```
+
+<img width="1040" height="812" alt="image" src="https://github.com/user-attachments/assets/a88377c5-f0f1-431f-9d80-36656119838f" />
+
+
+
+
 
