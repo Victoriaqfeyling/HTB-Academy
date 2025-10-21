@@ -129,6 +129,9 @@ Comando:
 
 ```cmd
 dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\Desktop\adduser.dll
+
+Registry property serverlevelplugindll successfully reset.
+Command completed successfully.
 ```
 
 * Si el usuario es miembro de `DnsAdmins`, la respuesta será `Registry property serverlevelplugindll successfully reset.` y `Command completed successfully.`
