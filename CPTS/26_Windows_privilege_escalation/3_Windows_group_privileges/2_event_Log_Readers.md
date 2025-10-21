@@ -91,7 +91,7 @@ C:\htb> wevtutil qe Security /rd:true /f:text /r:share01 /u:julie.clay /p:Welcom
 
 ## Consultar eventos con `Get-WinEvent` (PowerShell)
 
-El texto muestra cómo usar `Get-WinEvent` para filtrar eventos de creación de procesos (ID 4688) y extraer la propiedad que contiene la línea de comando.
+El texto muestra cómo usar [`Get-WinEvent`](https://learn.microsoft.com/es-es/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7.5&viewFallbackFrom=powershell-7.1) para filtrar eventos de creación de procesos (ID 4688) y extraer la propiedad que contiene la línea de comando.
 
 ```powershell
 PS C:\htb> Get-WinEvent -LogName security | where { $_.ID -eq 4688 -and $_.Properties[8].Value -like '*/user*'} | Select-Object @{name='CommandLine';expression={ $_.Properties[8].Value }}
