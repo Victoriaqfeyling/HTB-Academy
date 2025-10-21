@@ -11,6 +11,9 @@ Si puedes controlar qué DLL carga el servicio DNS, ese DLL se ejecutará con pr
 
 ## `ServerLevelPluginDll`
 
+[Dnscmd doc](https://learn.microsoft.com/es-es/windows-server/administration/windows-commands/dnscmd)
+[Publicación](https://adsecurity.org/?p=4064)
+
 * **Qué es:** una clave/valor en el registro que indica una DLL de "plugin" que el servicio DNS cargará.
 * **Debilidad:** `ServerLevelPluginDll` acepta una ruta a DLL sin verificar contenido ni origen. Si un administrador DNS controla ese valor, puede apuntar a una DLL maliciosa.
 
