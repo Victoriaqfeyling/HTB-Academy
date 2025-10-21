@@ -160,6 +160,9 @@ Vemos que nosostros pertenecemos al grupo.
 Esto es peligroso porque si se registra la línea de comandos, las contraseñas podrian quedar en los eventos.
 
 Realizamos una consulta de los registros mediante el utilitario `wevtutil` filtrando por la cadena `/user`:
+```powershell
+wevtutil qe Security /rd:true /f:text | Select-String "/user"
+```
 <img width="965" height="458" alt="image" src="https://github.com/user-attachments/assets/c426a777-9686-4ffe-894c-f72a20eb8ffe" />
 
 
