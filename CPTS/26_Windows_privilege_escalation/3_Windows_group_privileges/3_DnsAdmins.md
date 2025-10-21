@@ -27,6 +27,13 @@ Si puedes controlar qué DLL carga el servicio DNS, ese DLL se ejecutará con pr
   * `/serverlevelplugindll` es la propiedad que se va a establecer.
 * **Restricción:** sólo miembros de `DnsAdmins` pueden ejecutar esta operación con éxito; un usuario normal recibe `ERROR_ACCESS_DENIED` (Status = 5).
 
+  `Notas`:
+  - La gestión de dns se realiza mediante rpc. En este caso `dnscmd.exe` no modifica directamente el registro o los archivos del servidor, sino que envia una solicitud `rpc` al servicio dns para que este mismo realice la acción.
+  - Cuando se ejecuta el dnscmd.exe se modifica `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\DNS\Parameters\ServerLevelPluginDll`
+  - Cuando se reinicia el servicio DNS, se cargará la DLL en esta ruta (es decir, un recurso compartido de red al que puede acceder la cuenta de la máquina del controlador de dominio).
+  - Un atacante puede cargar una DLL personalizada para obtener un shell inverso o incluso cargar una herramienta como Mimikatz como una DLL para volcar credenciales.
+    
+
 ---
 
 ## Generar la DLL maliciosa con `msfvenom`
