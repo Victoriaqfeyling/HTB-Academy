@@ -15,7 +15,7 @@ También se menciona que, además de monitorizar, una organización puede restri
 
 ## Permisos — grupo *Event Log Readers*
 
-El grupo **Event Log Readers** permite a sus miembros **leer** los registros de eventos del equipo local. Esto es útil si un administrador quiere que usuarios con ciertos permisos (p. ej. power users o desarrolladores) puedan revisar logs sin darles privilegios administrativos completos.
+El grupo [**Event Log Readers**](https://learn.microsoft.com/es-es/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn579255(v=ws.11)?redirectedfrom=MSDN#event-log-readers) permite a sus miembros **leer** los registros de eventos del equipo local. Esto es útil si un administrador quiere que usuarios con ciertos permisos (p. ej. power users o desarrolladores) puedan revisar logs sin darles privilegios administrativos completos.
 
 ### Ejemplo de comprobación de pertenencia al grupo
 
