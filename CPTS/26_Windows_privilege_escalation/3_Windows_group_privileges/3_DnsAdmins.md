@@ -151,6 +151,7 @@ Command completed successfully.
 
 **Obtener SID del usuario:**
 
+
 ```cmd
 wmic useraccount where name="netadm" get sid
 
@@ -161,6 +162,8 @@ S-1-5-21-669053619-2741956077-1013132368-1109
 * `wmic useraccount where name="..." get sid` devuelve el SID del usuario `netadm`.
 
 **Mostrar descriptor de seguridad del servicio:**
+
+[Artículo](https://www.winhelponline.com/blog/view-edit-service-permissions-windows/)
 
 ```cmd
 sc.exe sdshow DNS
