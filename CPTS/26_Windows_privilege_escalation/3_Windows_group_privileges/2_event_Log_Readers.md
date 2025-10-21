@@ -117,7 +117,7 @@ net use T: \\fs01\backups /user:tim MyStr0ngP@ssword
 
 **Salida:** se muestra la línea de comando completa capturada por el evento.
 
-### Nota importante sobre permisos (texto original)
+### Nota importante sobre permisos
 
 El texto subraya que **buscar en el registro de seguridad con `Get-WinEvent` requiere acceso administrativo** o que se cambie el permiso en la clave de registro: `HKLM\System\CurrentControlSet\Services\Eventlog\Security`. La membresía sólo en el grupo *Event Log Readers* **no** es suficiente para ejecutar esta operación en el registro de seguridad.
 
