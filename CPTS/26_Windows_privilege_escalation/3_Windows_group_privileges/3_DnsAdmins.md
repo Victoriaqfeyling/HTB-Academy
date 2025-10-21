@@ -207,6 +207,16 @@ sc start dns
 
 ```cmd
 net group "Domain Admins" /domain
+
+Group name     Domain Admins
+Comment        Designated administrators of the domain
+
+Members
+
+-------------------------------------------------------------------------------
+Administrator            netadm
+The command completed successfully.
+
 ```
 
 ---
