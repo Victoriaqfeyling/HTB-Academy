@@ -4,8 +4,8 @@
 
 ## Concepto central:
 
-Los miembros de [`DnsAdmins`](https://learn.microsoft.com/es-es/windows-server/identity/ad-ds/manage/understand-security-groups#dnsadmins) pueden administrar el servicio DNS del dominio. El servicio DNS en Windows corre con la cuenta `NT AUTHORITY\SYSTEM` (alto privilegio).
-* **Consecuencia práctica:** Si puedes controlar qué DLL carga el servicio DNS, ese DLL se ejecutará con privilegios del sistema. En un Domain Controller (DC) esto puede llevar a **escalada a Domain Admin**.
+Los miembros de [`DnsAdmins`](https://learn.microsoft.com/es-es/windows-server/identity/ad-ds/manage/understand-security-groups#dnsadmins) pueden administrar el servicio DNS del dominio. El servicio DNS en Windows corre con la cuenta `NT AUTHORITY\SYSTEM` .
+Si puedes controlar qué DLL carga el servicio DNS, ese DLL se ejecutará con privilegios del sistema. En un Domain Controller (DC) esto puede llevar a **escalada a Domain Admin**.
 
 ---
 
