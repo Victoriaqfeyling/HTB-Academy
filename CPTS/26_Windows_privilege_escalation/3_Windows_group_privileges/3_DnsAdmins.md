@@ -486,6 +486,30 @@ net group "Domain Admins" /domain
 
 <img width="724" height="279" alt="image" src="https://github.com/user-attachments/assets/b88546d9-fc3e-46af-824a-eafc2da33ff8" />
 
+Pertenecemos al grupo "Domain Admins".
+
+Seguidamente intentamos leer el archivo pero tenemos acceso denegado:
+
+<img width="967" height="295" alt="image" src="https://github.com/user-attachments/assets/e70c67c4-3555-4ba4-b343-3677c45f0fae" />
+
+Reiniciamos el servidor con el siguiente comando:
+```powershell
+shutdown /l
+```
+Volvemos a conectarnos con `rdp` y observamos que nos aparece el panel de Server Manager:
+
+<img width="1018" height="730" alt="image" src="https://github.com/user-attachments/assets/48c377c2-f1a6-4863-89b4-62309fb09dec" />
+
+Abrimos el archivo y obtenemos la flag.
+
+<img width="580" height="202" alt="image" src="https://github.com/user-attachments/assets/46beee97-2a84-482c-9b46-32c0e71e2837" />
+
+FLAG:Dll_abus3_ftw!
+
+
+
+
+
 
 
 
