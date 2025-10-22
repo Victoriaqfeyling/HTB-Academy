@@ -395,11 +395,12 @@ xfreerdp3 /v:10.129.43.42 /u:netadm
 
 Abrimos una `powershell` y verificamos que pertenecemos al grupo `DnsAdmins` 
 ```powershell
-
-
-
+Get-ADGroupMember -Identity DnsAdmins
+```
 <img width="1024" height="622" alt="image" src="https://github.com/user-attachments/assets/03a99e67-9cb4-433a-9abc-2cc899ff1fad" />
 
+
+Al pertenecer al grupo `DnsAdmins` podemos cargar una DLL malisiosa en el `ServerLevelPluguinDll` del registro para elevar privilegios.
 
 
 
