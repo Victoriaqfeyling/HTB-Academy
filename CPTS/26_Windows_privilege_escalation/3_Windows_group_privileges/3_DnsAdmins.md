@@ -491,7 +491,7 @@ Pertenecemos al grupo "Domain Admins".
 Seguidamente intentamos leer el archivo pero tenemos acceso denegado:
 
 <img width="967" height="295" alt="image" src="https://github.com/user-attachments/assets/e70c67c4-3555-4ba4-b343-3677c45f0fae" />
-
+A veces es necesario reiniciar para que los cambios se den efectivamente.
 Reiniciamos el servidor con el siguiente comando:
 ```powershell
 shutdown /l
@@ -500,11 +500,32 @@ Volvemos a conectarnos con `rdp` y observamos que nos aparece el panel de Server
 
 <img width="1018" height="730" alt="image" src="https://github.com/user-attachments/assets/48c377c2-f1a6-4863-89b4-62309fb09dec" />
 
+Vemos los permisos sobre el archivo mediante el comando `icacls`:
+
+<img width="745" height="300" alt="image" src="https://github.com/user-attachments/assets/933948b2-dd04-42d3-8911-a6247d03457a" />
+De esta manera observamos que tenemos `Full control` (F).
+
 Abrimos el archivo y obtenemos la flag.
 
 <img width="580" height="202" alt="image" src="https://github.com/user-attachments/assets/46beee97-2a84-482c-9b46-32c0e71e2837" />
 
-FLAG:Dll_abus3_ftw!
+`FLAG`: `Dll_abus3_ftw!`
+
+---
+
+## Revertir cambios:
+
+Comprobamos la clave en registro de la siguiente manera:
+
+```powershell
+reg query \\10.129.215.116\HKLM\SYSTEM\CurrentControlSet\Services\DNS\Parameters
+
+```
+<img width="729" height="184" alt="image" src="https://github.com/user-attachments/assets/70b5464d-bfa5-4af8-9825-715b9c5923e0" />
+
+
+<img width="686" height="186" alt="image" src="https://github.com/user-attachments/assets/b007f1d2-7050-42f8-946e-769990a1cd23" />
+
 
 
 
