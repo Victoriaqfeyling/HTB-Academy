@@ -231,6 +231,18 @@ Pasos para limpiar según el texto (desde una consola elevada con cuenta admin):
 
 ```cmd
 reg query \\\\10.129.43.9\\HKLM\\SYSTEM\\CurrentControlSet\\Services\\DNS\\Parameters
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters
+    GlobalQueryBlockList    REG_MULTI_SZ    wpad\0isatap
+    EnableGlobalQueryBlockList    REG_DWORD    0x1
+    PreviousLocalHostname    REG_SZ    WINLPE-DC01.INLANEFREIGHT.LOCAL
+    Forwarders    REG_MULTI_SZ    1.1.1.1\08.8.8.8
+    ForwardingTimeout    REG_DWORD    0x3
+    IsSlave    REG_DWORD    0x0
+    BootMethod    REG_DWORD    0x3
+    AdminConfigured    REG_DWORD    0x1
+    ServerLevelPluginDll    REG_SZ    adduser.dll
+
 ```
 
 * `reg query \<host>\HKLM\...` consulta la rama de registro remota. La salida debe mostrar `ServerLevelPluginDll    REG_SZ    adduser.dll` si la clave quedó establecida.
@@ -239,6 +251,10 @@ reg query \\\\10.129.43.9\\HKLM\\SYSTEM\\CurrentControlSet\\Services\\DNS\\Param
 
 ```cmd
 reg delete \\\\10.129.43.9\\HKLM\\SYSTEM\\CurrentControlSet\\Services\\DNS\\Parameters  /v ServerLevelPluginDll
+
+Delete the registry value ServerLevelPluginDll (Yes/No)? Y
+The operation completed successfully.
+
 ```
 
 * `reg delete <ruta> /v <valor>` elimina el valor de registro `ServerLevelPluginDll`. El comando pedirá confirmación `(Yes/No)?`.
