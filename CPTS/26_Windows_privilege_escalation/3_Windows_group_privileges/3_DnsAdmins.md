@@ -348,6 +348,7 @@ DWORD WINAPI kdns_DnsPluginQuery(PSTR pszQueryName, WORD wQueryType, PSTR pszRec
 **Pasos del texto para abusar:**
 
 1. **Deshabilitar la lista global de bloqueos:**
+2. Utilizamos [Set-DnsServerGlobalQueryBlockList](https://learn.microsoft.com/en-us/powershell/module/dnsserver/set-dnsserverglobalqueryblocklist?view=windowsserver2019-ps)
 
 ```powershell
 Set-DnsServerGlobalQueryBlockList -Enable $false -ComputerName dc01.inlanefreight.local
