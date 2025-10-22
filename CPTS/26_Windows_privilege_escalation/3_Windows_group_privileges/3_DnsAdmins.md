@@ -536,9 +536,13 @@ reg delete \\10.129.215.116\HKLM\SYSTEM\CurrentControlSet\Services\DNS\Parameter
 
 <img width="730" height="106" alt="image" src="https://github.com/user-attachments/assets/16f2606f-cec4-4eac-b11e-011ebeaf5a27" />
 
-
+De esta forma comprobamos que se eliminó correctamente:
 
 <img width="686" height="186" alt="image" src="https://github.com/user-attachments/assets/b007f1d2-7050-42f8-946e-769990a1cd23" />
+
+
+<img width="718" height="166" alt="image" src="https://github.com/user-attachments/assets/5e9b945a-9184-4a41-b13c-ffdd7326d45a" />
+
 
 
 
