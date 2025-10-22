@@ -393,6 +393,14 @@ xfreerdp3 /v:10.129.43.42 /u:netadm
 ```
 <img width="1057" height="823" alt="image" src="https://github.com/user-attachments/assets/45a7d78c-976b-4d68-8387-a9151291cebf" />
 
+Abrimos una `powershell` y verificamos que pertenecemos al grupo `DnsAdmins` 
+```powershell
+
+
+
+<img width="1024" height="622" alt="image" src="https://github.com/user-attachments/assets/03a99e67-9cb4-433a-9abc-2cc899ff1fad" />
+
+
 
 
 
