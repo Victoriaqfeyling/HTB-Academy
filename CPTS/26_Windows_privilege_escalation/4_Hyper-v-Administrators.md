@@ -35,7 +35,7 @@
 
 ## CVE mencionados y alternativa
 
-**CVE-2018-0952 y CVE-2019-0841**
+[CVE-2018-0952](https://www.tenable.com/cve/CVE-2018-0952) y CVE-2019-0841](https://www.tenable.com/cve/CVE-2019-0841)
 
 * El texto indica que, si el sistema operativo es vulnerable a alguna de estas vulnerabilidades, es posible aprovecharlas para lograr privilegios `SYSTEM` tras realizar el ataque con el enlace duro.
 
