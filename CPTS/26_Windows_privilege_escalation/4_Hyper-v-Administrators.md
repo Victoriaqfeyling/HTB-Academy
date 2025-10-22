@@ -9,7 +9,7 @@
 
 **Implicación importante:**
 
-* Si los Controladores de Dominio (Domain Controllers) están virtualizados en Hyper‑V, los miembros de `Hyper‑V Administrators` pueden controlar esas máquinas virtuales. Con suficiente acceso a una VM que alojase un Domain Controller, un administrador de virtualización podría clonar la VM, acceder al disco virtual y obtener el fichero `NTDS.dit` (la base de datos de Active Directory), lo que permitiría extraer hashes NTLM de todas las cuentas del dominio.
+* Si los Controladores de Dominio están virtualizados en Hyper‑V, los miembros de `Hyper‑V Administrators` pueden controlar esas máquinas virtuales. Con suficiente acceso a una VM que alojase un Domain Controller, un administrador de virtualización podría clonar la VM, acceder al disco virtual y obtener el fichero `NTDS.dit`, lo que permitiría extraer hashes NTLM de todas las cuentas del dominio.
 
 ---
 
