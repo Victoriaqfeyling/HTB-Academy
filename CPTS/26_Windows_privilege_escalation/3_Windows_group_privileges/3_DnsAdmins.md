@@ -524,6 +524,20 @@ reg query \\10.129.215.116\HKLM\SYSTEM\CurrentControlSet\Services\DNS\Parameters
 <img width="729" height="184" alt="image" src="https://github.com/user-attachments/assets/70b5464d-bfa5-4af8-9825-715b9c5923e0" />
 
 
+
+
+
+A continuación eliminamos la clave que apunta a la DLL:
+
+```powershell
+reg delete \\10.129.215.116\HKLM\SYSTEM\CurrentControlSet\Services\DNS\Parameters  /v ServerLevelPluginDll
+
+```
+
+<img width="730" height="106" alt="image" src="https://github.com/user-attachments/assets/16f2606f-cec4-4eac-b11e-011ebeaf5a27" />
+
+
+
 <img width="686" height="186" alt="image" src="https://github.com/user-attachments/assets/b007f1d2-7050-42f8-946e-769990a1cd23" />
 
 
