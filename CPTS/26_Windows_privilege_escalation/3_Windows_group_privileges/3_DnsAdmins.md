@@ -461,8 +461,29 @@ A continuación arrancamos de nuevo el servicio
 ```cmd
 sc start dns
 ```
+Los cuales no funcionaron, por lo cuál empleamos los siguientes comandos:
+```cmd
+sc.exe stop dns
+```
+y
+```cmd
+sc.exe start dns
+```
 
 
+<img width="654" height="338" alt="image" src="https://github.com/user-attachments/assets/54d2d34f-d103-4b5c-9771-a5eed7cbf13e" />
+
+A veces al correr `sc start` se aplica un contexto de ejecución diferente y el reinicio no llega a recargar completamente los componentes del servicio, especialmente las dll de pluguin. Con sc,exe el servicio se reinicia completamente y windows vuelve a cargar todas las dependencias.
+
+Tras reinicio exitoso, si la `DLL` ejecutaba `net group "Domain Admins" ...` deberíamos ver al usuario añadido al grupo `Domain Admins`.
+
+Listamos miembros del grupo `Domain Admins` en el dominio:
+
+```powershell
+net group "Domain Admins" /domain
+```
+
+<img width="724" height="279" alt="image" src="https://github.com/user-attachments/assets/b88546d9-fc3e-46af-824a-eafc2da33ff8" />
 
 
 
