@@ -264,6 +264,19 @@ The operation completed successfully.
 ```cmd
 sc.exe start dns
 ```
+```cmd
+
+C:\htb> sc query dns
+
+SERVICE_NAME: dns
+        TYPE               : 10  WIN32_OWN_PROCESS
+        STATE              : 4  RUNNING
+                                (STOPPABLE, PAUSABLE, ACCEPTS_SHUTDOWN)
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x0
+```
 
 * Si la eliminación fue correcta, el servicio arrancará normalmente y `sc query dns` deberá mostrar `STATE: 4 RUNNING`.
 
