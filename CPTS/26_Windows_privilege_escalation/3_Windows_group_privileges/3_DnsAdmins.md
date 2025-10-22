@@ -343,6 +343,8 @@ DWORD WINAPI kdns_DnsPluginQuery(PSTR pszQueryName, WORD wQueryType, PSTR pszRec
 
 **Contexto:** WPAD (Web Proxy Auto-Discovery) permite a clientes autoconfigurarse para usar un proxy en la red. Si un atacante agrega un registro DNS `wpad.<dominio>` apuntando al atacante, muchos hosts que ejecuten WPAD con la configuración predeterminada consultarán esa entrada y podrán ser forzados a usar el proxy del atacante.
 
+Podríamos usar una herramienta como [Responder](https://github.com/lgandx/Responder) o [Inveigh](https://github.com/Kevin-Robertson/Inveigh) para suplantar el tráfico e intentar capturar hashes de contraseñas y descifrarlos sin conexión, o bien, realizar un ataque SMBRelay.
+
 **Protección por defecto:** los servidores DNS introdujeron una *global query block list* que bloquea nombres problemáticos por defecto (ej. `wpad`, `isatap`).
 
 **Pasos del texto para abusar:**
