@@ -1,4 +1,4 @@
-# Print Operators — Explicación paso a paso (traducción y explicación de HTB)
+# Print Operators
 
 **Print Operators** es un grupo con privilegios elevados en un dominio: otorga entre otras cosas el privilegio `SeLoadDriverPrivilege` (capacidad de cargar drivers), permisos para gestionar impresoras en un Domain Controller, iniciar sesión localmente en un DC y apagarlo. El objetivo del flujo es: confirmar que la cuenta es miembro de Print Operators, habilitar `SeLoadDriverPrivilege`, instalar un driver vulnerable (Capcom.sys) y usar un exploit que aprovecha ese driver para conseguir una shell como SYSTEM.
 
