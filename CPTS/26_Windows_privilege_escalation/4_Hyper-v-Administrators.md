@@ -5,7 +5,7 @@
 ## Grupo **Hyper-V Administrators**
 
 
-* Es un grupo de seguridad de Windows que otorga acceso completo a las funcionalidades de Hyper‑V en la máquina/servidor.
+* El grupo [Hyper-V Administrators](https://learn.microsoft.com/es-es/windows-server/identity/ad-ds/manage/understand-security-groups#hyper-v-administrators) es un grupo de seguridad de Windows que otorga acceso completo a las [funcionalidades](https://learn.microsoft.com/es-es/windows-server/manage/windows-admin-center/use/manage-virtual-machines) de Hyper‑V en la máquina/servidor.
 
 **Implicación importante:**
 
