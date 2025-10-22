@@ -382,10 +382,17 @@ Add-DnsServerResourceRecordA -Name wpad -ZoneName inlanefreight.local -ComputerN
 
 Laboratorio
 
-####Aproveche la pertenencia al grupo DnsAdmins para escalar privilegios. Envíe el contenido de la bandera ubicada en c:\Users\Administrator\Desktop\DnsAdmins\flag.txt
+#### Aproveche la pertenencia al grupo DnsAdmins para escalar privilegios. Envíe el contenido de la bandera ubicada en c:\Users\Administrator\Desktop\DnsAdmins\flag.txt
 `ip`:10.129.43.42 
 `usuario`:netadm
 `contraseña`:HTB_@cademy_stdnt!
+
+Iniciamos conectando el host mediante `rdp`:
+```bash
+xfreerdp3 /v:10.129.43.42 /u:netadm
+```
+<img width="1057" height="823" alt="image" src="https://github.com/user-attachments/assets/45a7d78c-976b-4d68-8387-a9151291cebf" />
+
 
 
 
