@@ -59,9 +59,13 @@ C:\Program Files (x86)\Mozilla Maintenance Service\maintenanceservice.exe
 
 * Mozilla instala un servicio denominado *Mozilla Maintenance Service* que ejecuta `maintenanceservice.exe`. Si conseguimos tomar control de ese ejecutable (permisos y propiedad), y el servicio corre como `SYSTEM` pero puede ser iniciado por un usuario local sin privilegios, podemos reemplazar el ejecutable por uno malicioso y, al iniciar el servicio, obtener ejecución como `SYSTEM`.
 
+  Utilizamos el [`PoC`](https://raw.githubusercontent.com/decoder-it/Hyper-V-admin-EOP/master/hyperv-eop.ps1) para otorgar a nuestro usuario actual permisos completos sobre el archivo.
+  
 ---
 
 ## Tomar la propiedad del archivo — `takeown`
+
+Tras haber ejecutado el `PoC` deberíamos tener control total de este archivo y poder tomar propiedad del mismo.
 
 **Comando mostrado en el texto:**
 
