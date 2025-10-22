@@ -341,7 +341,7 @@ DWORD WINAPI kdns_DnsPluginQuery(PSTR pszQueryName, WORD wQueryType, PSTR pszRec
 
 ## Otra forma de abuso: crear un registro WPAD
 
-**Contexto:** WPAD (Web Proxy Auto-Discovery) permite a clientes autoconfigurarse para usar un proxy en la red. Si un atacante agrega un registro DNS `wpad.<dominio>` apuntando al atacante, muchos hosts consultarán esa entrada y podrán ser forzados a usar el proxy del atacante.
+**Contexto:** WPAD (Web Proxy Auto-Discovery) permite a clientes autoconfigurarse para usar un proxy en la red. Si un atacante agrega un registro DNS `wpad.<dominio>` apuntando al atacante, muchos hosts que ejecuten WPAD con la configuración predeterminada consultarán esa entrada y podrán ser forzados a usar el proxy del atacante.
 
 **Protección por defecto:** los servidores DNS introdujeron una *global query block list* que bloquea nombres problemáticos por defecto (ej. `wpad`, `isatap`).
 
