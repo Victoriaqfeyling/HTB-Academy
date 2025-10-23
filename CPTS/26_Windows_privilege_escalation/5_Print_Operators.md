@@ -68,6 +68,18 @@ El texto indica que debemos descargar la herramienta [PoC](https://github.com/3g
 #include <sddl.h>
 #include <stdio.h>
 #include "tchar.h"
+
+Microsoft (R) C/C++ Optimizing Compiler Version 19.28.29913 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+EnableSeLoadDriverPrivilege.cpp
+Microsoft (R) Incremental Linker Version 14.28.29913.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:EnableSeLoadDriverPrivilege.exe
+EnableSeLoadDriverPrivilege.obj
+
+
 ```
 
 **Explicación de los includes**:
