@@ -141,7 +141,7 @@ reg add HKCU\System\CurrentControlSet\CAPCOM /v Type /t REG_DWORD /d 1
 
 ## 6) Verificar que el driver NO esté cargado (DriverView)
 
-Herramienta usada: `DriverView.exe` de Nirsoft.
+Herramienta usada: [`DriverView.exe`](https://www.nirsoft.net/utils/driverview.html) de Nirsoft.
 
 Comandos del texto:
 
