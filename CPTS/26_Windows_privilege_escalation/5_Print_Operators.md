@@ -334,9 +334,9 @@ PowerShell/Prompt pedirá confirmación (Yes/No). El texto muestra la confirmaci
 
 ---
 #Laboratorio:
- #### Siga los pasos de esta sección para escalar privilegios a SYSTEM y enviar el contenido del archivo flag.txt al escritorio del administrador. Las herramientas necesarias para ambos métodos se encuentran en el directorio C:\Tools, o puede practicar compilándolas y subiéndolas usted mismo.
+ #### Siga los pasos de esta sección para escalar privilegios a SYSTEM y obtener el contenido del archivo flag.txt que se encuentra en el  escritorio del administrador. Las herramientas necesarias para ambos métodos se encuentran en el directorio C:\Tools, o puede practicar compilándolas y subiéndolas usted mismo.
 
- `IP`:
+ `IP`:10.129.43.31
  `USER`:printsvc
  `PASSWORD`: HTB_@cademy_stdnt!
 
