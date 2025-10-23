@@ -135,7 +135,7 @@ reg add HKCU\System\CurrentControlSet\CAPCOM /v Type /t REG_DWORD /d 1
 
 **¿Qué es `\??\`?**
 
-* `\??\` es una **NT Object Path** (ruta de objeto del espacio de nombres NT). El Win32 API acepta/parsea esa ruta y la resuelve a la ruta física correcta (por eso `\??\C:\Tools\Capcom.sys` apunta al archivo `C:\Tools\Capcom.sys`). El texto lo llama "odd syntax" y explica que la Win32 API la resuelve para localizar y cargar el driver.
+* `\??\` es una [**NT Object Path**](https://learn.microsoft.com/es-es/openspecs/windows_protocols/ms-even/c1550f98-a1ce-426a-9991-7509e7c3787c) (ruta de objeto del espacio de nombres NT). El Win32 API acepta/parsea esa ruta y la resuelve a la ruta física correcta (por eso `\??\C:\Tools\Capcom.sys` apunta al archivo `C:\Tools\Capcom.sys`). El texto lo llama "odd syntax" y explica que la Win32 API la resuelve para localizar y cargar el driver.
 
 ---
 
