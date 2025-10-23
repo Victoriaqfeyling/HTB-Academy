@@ -10,6 +10,15 @@ Comando usado:
 
 ```
 whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name           Description                          State
+======================== =================================    =======
+SeIncreaseQuotaPrivilege Adjust memory quotas for a process   Disabled
+SeChangeNotifyPrivilege  Bypass traverse checking             Enabled
+SeShutdownPrivilege      Shut down the system                 Disabled
 ```
 
 **Qué muestra**: lista de privilegios de la cuenta actual. Columnas principales:
