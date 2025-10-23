@@ -27,13 +27,7 @@ SeShutdownPrivilege      Shut down the system                 Disabled
 * `Description`: descripción legible del privilegio.
 * `State`: estado (`Enabled` o `Disabled`).
 
-Ejemplo en el texto — salida parcial:
 
-```
-SeIncreaseQuotaPrivilege Adjust memory quotas for a process   Disabled
-SeChangeNotifyPrivilege  Bypass traverse checking             Enabled
-SeShutdownPrivilege      Shut down the system                 Disabled
-```
 
 **Interpretación**: si `SeLoadDriverPrivilege` no aparece habilitado desde un contexto sin elevar, hay que **bypassear UAC** o conseguir un contexto elevado.
 
