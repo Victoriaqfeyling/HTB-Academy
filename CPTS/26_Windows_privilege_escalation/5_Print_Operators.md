@@ -79,6 +79,8 @@ El texto indica que debemos descargar la herramienta [PoC](https://github.com/3g
 * `<stdio.h>`: I/O en C (printf, etc.).
 * `"tchar.h"`: macros para compatibilidad Unicode/ANSI (`TCHAR`, `TEXT()` etc.).
 
+  `Nota`: La PoC habilita el privilegio y carga el control automaticamente.
+
 ### Compilar con Visual Studio (cl.exe)
 
 Comando usado en el texto:
