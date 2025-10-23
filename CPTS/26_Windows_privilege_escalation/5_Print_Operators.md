@@ -35,7 +35,7 @@ SeShutdownPrivilege      Shut down the system                 Disabled
 
 ## 2) Bypass UAC / obtener contexto elevado
 
-El texto menciona el repo "UACMe" (lista de bypasses de UAC) o alternativamente abrir una consola administrativa desde GUI e introducir credenciales de la cuenta miembro de Print Operators. Tras hacerlo, al volver a ejecutar `whoami /priv`, `SeLoadDriverPrivilege` aparece pero inicialmente **Disabled** (luego se habilita con la PoC).
+El texto menciona el repo ["UACMe" (lista de bypasses de UAC)](https://github.com/hfiref0x/UACME) o alternativamente abrir una consola administrativa desde GUI e introducir credenciales de la cuenta miembro de Print Operators. Tras hacerlo, al volver a ejecutar `whoami /priv`, `SeLoadDriverPrivilege` aparece pero inicialmente **Disabled** (luego se habilita con la PoC).
 
 Salida de ejemplo tras acceso elevado:
 
