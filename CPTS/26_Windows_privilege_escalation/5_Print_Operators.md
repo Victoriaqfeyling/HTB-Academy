@@ -276,6 +276,8 @@ TCHAR CommandLine[] = TEXT("C:\\ProgramData\\revshell.exe");
 
 y así lanzar un binario de *reverse shell* (`revshell.exe`) generado con `msfvenom`. El texto describe que se debe configurar un listener acorde al payload generado.
 
+`Nota`: Si una `reverse shell` se bloquea por algún motivo, podemos intentar usar una `bind shell` o  bien usar un payload que ejecute un binario en la víctima o que añada un usuario(exec / add user)
+
 ---
 
 ## 11) Automatizar: `EoPLoadDriver`
