@@ -282,7 +282,7 @@ y así lanzar un binario de *reverse shell* (`revshell.exe`) generado con `msfve
 
 ## 11) Automatizar: `EoPLoadDriver`
 
-El texto menciona la herramienta `EoPLoadDriver` que automatiza pasos: habilitar el privilegio, crear la clave de registro y ejecutar `NtLoadDriver`.
+El texto menciona la herramienta [`EoPLoadDriver`](https://github.com/TarlogicSecurity/EoPLoadDriver/) que automatiza pasos: habilitar el privilegio, crear la clave de registro y ejecutar `NtLoadDriver`.
 
 Ejemplo de ejecución:
 
