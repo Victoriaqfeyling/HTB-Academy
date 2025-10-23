@@ -113,6 +113,8 @@ Salida de ejemplo (resumida) que muestra el proceso de compilación y enlazado y
 
 ## 5) Añadir referencia al driver en el registro (HKCU)
 
+Hay que añadir una referencia al driver en el registro porque Windows solo puede cargar un controlador si existe una entrada válida en el registro que indique su ruta y tipo de servicio, y `NtLoadDriver` (la API usada para cargarlo) necesita precisamente esa clave para localizar el archivo `.sys` y montarlo en el Kernel.
+
 El texto indica descargar [`Capcom.sys`](https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys) y guardarlo en `C:\temp` (o `C:\Tools\Capcom.sys` en ejemplos) y luego **crear claves** bajo `HKCU\System\CurrentControlSet\CAPCOM` con `reg add`.
 
 Comandos del texto:
