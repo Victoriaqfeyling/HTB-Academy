@@ -113,7 +113,7 @@ Salida de ejemplo (resumida) que muestra el proceso de compilación y enlazado y
 
 ## 5) Añadir referencia al driver en el registro (HKCU)
 
-El texto indica descargar `Capcom.sys` y guardarlo en `C:\temp` (o `C:\Tools\Capcom.sys` en ejemplos) y luego **crear claves** bajo `HKCU\System\CurrentControlSet\CAPCOM` con `reg add`.
+El texto indica descargar [`Capcom.sys`](https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys) y guardarlo en `C:\temp` (o `C:\Tools\Capcom.sys` en ejemplos) y luego **crear claves** bajo `HKCU\System\CurrentControlSet\CAPCOM` con `reg add`.
 
 Comandos del texto:
 
