@@ -2,7 +2,7 @@
 
 ## 1) Server Operators
 
-* El grupo *Server Operators* permite a sus miembros administrar servidores Windows sin necesidad de pertenecer a *Domain Admins*.
+* El grupo [*Server Operators*](https://learn.microsoft.com/es-es/windows-server/identity/ad-ds/manage/understand-security-groups#bkmk-serveroperators) permite a sus miembros administrar servidores Windows sin necesidad de pertenecer a *Domain Admins*.
 * Es un grupo con muchos privilegios: puede iniciar sesión localmente en servidores (incluyendo Controladores de Dominio).
 
 **Privilegios mencionados**
