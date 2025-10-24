@@ -403,4 +403,13 @@ reg add HKCU\System\CurrentControlSet\CAPCOM /v Type /t REG_DWORD /d 1
 <img width="964" height="130" alt="image" src="https://github.com/user-attachments/assets/2e5215b8-5f48-4115-8d92-f3337d4c6753" />
 
 
+El paso siguiente es verificar con DriverView.exe no este cargado:
+```powershell
+.\DriverView.exe /stext drivers.txt
+cat drivers.txt | Select-String -pattern Capcom
+```
+Y efectivamente es asi
+
+<img width="480" height="95" alt="image" src="https://github.com/user-attachments/assets/8f5ec0b7-edf4-480a-9e2d-c2baf8f4a0b4" />
+
 
