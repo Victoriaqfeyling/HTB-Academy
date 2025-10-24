@@ -18,6 +18,21 @@
 
 ```
 sc qc AppReadiness
+
+[SC] QueryServiceConfig SUCCESS
+
+SERVICE_NAME: AppReadiness
+        TYPE               : 20  WIN32_SHARE_PROCESS
+        START_TYPE         : 3   DEMAND_START
+        ERROR_CONTROL      : 1   NORMAL
+        BINARY_PATH_NAME   : C:\Windows\System32\svchost.exe -k AppReadiness -p
+        LOAD_ORDER_GROUP   :
+        TAG                : 0
+        DISPLAY_NAME       : App Readiness
+        DEPENDENCIES       :
+        SERVICE_START_NAME : LocalSystem
+
+
 ```
 
 **Explicación de la sintaxis**:
