@@ -381,7 +381,14 @@ Observamos que esta vez el privilegio `SeLoadDriverPrivilege` aparece `Disabled`
 ---
 
 
-El siguiente paso es habilitar `SeLoadDriverPrivilege` con la PoC.
+El siguiente paso es habilitar `SeLoadDriverPrivilege` con el archivo EnableSeLoadDriverPrivilege.cpp de la PoC que proporciona el curso.
+#include <windows.h>
+#include <assert.h>
+#include <winternl.h>
+#include <sddl.h>
+#include <stdio.h>
+#include "tchar.h"
+
 
 
 
