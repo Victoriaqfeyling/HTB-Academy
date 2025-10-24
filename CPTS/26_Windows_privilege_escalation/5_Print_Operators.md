@@ -342,8 +342,25 @@ PowerShell/Prompt pedirá confirmación (Yes/No). El texto muestra la confirmaci
 
  Nos conectamos al host mediante RDP:
  ```bash
-xfreerdp3 /v:<target ip> /u:htb-student
-
+xfreerdp3 /v:10.129.43.31 /u:printsvc
 ```
- 
+<img width="1023" height="802" alt="image" src="https://github.com/user-attachments/assets/471445fe-6640-41c3-9bb8-b725de1ec102" />
+Abrimos una powershell y visualizamos los privilegios con el suiguiente comando:
+
+```powershell
+whoami/ priv
+```
+
+<img width="962" height="330" alt="image" src="https://github.com/user-attachments/assets/a03f4d6a-425c-4b66-be2c-6c54a434813c" />
+
+Vemos que `SeLoadDriverPrivilege` no aparece entre los privilegios que tenemos.
+
+Visualizamos los grupos que estan en el token de nuestra sesión: 
+```powershell
+whoami/ groups
+```
+<img width="903" height="295" alt="image" src="https://github.com/user-attachments/assets/f1be67ab-77e6-4729-93db-b9253c6adab9" />
+
+Confirmamos que pertenecemos al grupo `Print Operators` ya que aparece la linea `BUILTIN\Print Operators`.
+
 
