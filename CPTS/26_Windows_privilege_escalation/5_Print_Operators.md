@@ -429,6 +429,38 @@ Vemos que `SeLoadDriverPrivilege` figura `Disabled`
 <img width="988" height="161" alt="image" src="https://github.com/user-attachments/assets/6c41e1b3-31a6-4753-8169-c5650194e794" />
 
 
+EnableSeLoadDriverPrivilege.exe habilita SeLoadDriverPrivilege en el token del proceso que lo ejecuta. Esa habilitación no se propaga al token del PowerShell padre, por eso `whoami /priv` en la misma sesión de PowerShell sigue mostrando el privilegio como `Disabled`.
+
+Repetir el volcado de drivers y filtrar por Capcom:
+
+```powershell
+.\DriverView.exe /stext drivers.txt
+cat drivers.txt | Select-String -pattern Capcom
+```
+
+<img width="812" height="89" alt="image" src="https://github.com/user-attachments/assets/bf07ddf3-96bf-4358-9caf-a624e5cf82b0" />
+
+Verificamos que el driver está cargado.
+
+Cuando ejecutamos `EnableSeLoadDriverPrivilege.exe` se habilitó `SeLoadDriverPrivilege` en su token y luego llamó a `NtLoadDriver` desde el mismo proceso. Esto significa que el `exe` pudo habilitar el privilegio y la llamada a cargar el driver terminó con éxito.
+
+El último paso sería compilar y ejecutar `ExploitCapcom.exe` para escalar privilegios. En este caso lo tenemos en `C:\Tools\`:
+
+<img width="891" height="470" alt="image" src="https://github.com/user-attachments/assets/01ea0b36-b2f0-4cc7-b459-16bc7a4183f1" />
+
+El exploit `ExploitCapcom.exe` aprovecha la vulnerabilidad del driver `Capcom.sys` para ejecutar shellcode en modo kernel. Este código roba el token del proceso `SYSTEM` y lo asigna al proceso actual, otorgando una shell con privilegios `NT AUTHORITY\SYSTEM`.
+
+Hemos escalado privilegios. Procedemos a mostrar el contenido de la `flag` para resolver el laboratorio:
+
+<img width="710" height="344" alt="image" src="https://github.com/user-attachments/assets/e5f7e4e2-6088-4952-b213-e93278c7f8b4" />
+
+`flag`: Pr1nt_0p3rat0rs_ftw!
+
+
+
+
+
+
 
 
 
