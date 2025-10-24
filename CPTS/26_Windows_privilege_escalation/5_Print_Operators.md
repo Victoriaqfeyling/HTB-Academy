@@ -337,13 +337,13 @@ PowerShell/Prompt pedirá confirmación (Yes/No). El texto muestra la confirmaci
 #Laboratorio:
  #### Siga los pasos de esta sección para escalar privilegios a SYSTEM y obtener el contenido del archivo flag.txt que se encuentra en el  escritorio del administrador. Las herramientas necesarias para ambos métodos se encuentran en el directorio C:\Tools, o puede practicar compilándolas y subiéndolas usted mismo.
 
- `IP`:10.129.43.31
+ `IP`:10.129.182.209
  `USER`:printsvc
  `PASSWORD`: HTB_@cademy_stdnt!
 
  Nos conectamos al host mediante RDP:
  ```bash
-xfreerdp3 /v:10.129.43.31 /u:printsvc
+xfreerdp3 /v: 10.129.182.209/u:printsvc
 ```
 <img width="1023" height="802" alt="image" src="https://github.com/user-attachments/assets/471445fe-6640-41c3-9bb8-b725de1ec102" />
 Abrimos una powershell y visualizamos los privilegios con el suiguiente comando:
