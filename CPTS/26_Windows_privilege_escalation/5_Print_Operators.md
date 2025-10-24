@@ -385,7 +385,15 @@ Observamos que esta vez el privilegio `SeLoadDriverPrivilege` aparece `Disabled`
 El siguiente paso es habilitar `SeLoadDriverPrivilege` con el archivo `EnableSeLoadDriverPrivilege.exe` de la PoC que proporciona el curso, el mismo, ademas, carga el driver.
 
 Podriamos compilar el `.cpp` de la PoC pero procedemos a utilizar el `.exe` que tenemos en la máquina víctima.
-Antes de ejecutar el `EnableSeLoadDriverPrivilege.exe` debemos añadir referencia a `C:\Tools\Capcom.sys` en el registro
+
+El laboratorio nos aclara que todos los utilitarios se encuentran en la ruta `C:\Tools`:
+<img width="1003" height="309" alt="image" src="https://github.com/user-attachments/assets/69432c43-6edb-442e-87d7-12fcf4b43c1d" />
+
+
+Antes de ejecutar el `EnableSeLoadDriverPrivilege.exe` debemos añadir referencia a `C:\Tools\Capcom.sys` en el registro.
+
+
+
 Utilizamos los siguientes comandos:  
 
 ```powershell
