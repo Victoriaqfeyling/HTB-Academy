@@ -350,7 +350,27 @@ sc.exe qc AppReadiness
 ```
 <img width="763" height="274" alt="image" src="https://github.com/user-attachments/assets/464daff4-b66e-4378-a068-ab3949c9c0dc" />
 
-Confirmamos que se ejecuta como `LocalSystem`. Esto nos permitira ejecutar comandos como SYSTEM
+Confirmamos que se ejecuta como `LocalSystem`. Esto nos permitira ejecutar comandos como SYSTEM.
+
+El siguiente paso es comprobar los permisos del servicio `PsService.exe`
+
+```powershell
+C:\Tools\PsService.exe security AppReadiness
+```
+<img width="667" height="616" alt="image" src="https://github.com/user-attachments/assets/f031c5e7-c53b-4a58-8f69-3b00f88ea3c4" />
+
+Confirmamos que nuestro grupo tiene control total sobre servicio (ALL). Esto nos permitira modificar la config del servicio.
+
+Ahora verificamos membresia del grupo `Administrators`
+
+```powershell
+net localgroup Administrators
+```
+
+<img width="728" height="182" alt="image" src="https://github.com/user-attachments/assets/cff5c506-0d13-4e82-a2dc-847806cad900" />
+
+
+
 
 
 
