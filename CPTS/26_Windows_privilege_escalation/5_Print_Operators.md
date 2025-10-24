@@ -348,7 +348,7 @@ xfreerdp3 /v:10.129.43.31 /u:printsvc
 Abrimos una powershell y visualizamos los privilegios con el suiguiente comando:
 
 ```powershell
-whoami/ priv
+whoami /priv
 ```
 
 <img width="1687" height="261" alt="image" src="https://github.com/user-attachments/assets/07d90b6f-3b5b-4b97-aa06-ba5f6724b350" />
@@ -358,7 +358,7 @@ Vemos que `SeLoadDriverPrivilege` no aparece entre los privilegios que tenemos.
 
 Visualizamos los grupos que estan en el token de nuestra sesión: 
 ```powershell
-whoami/ groups
+whoami /groups
 ```
 <img width="903" height="295" alt="image" src="https://github.com/user-attachments/assets/f1be67ab-77e6-4729-93db-b9253c6adab9" />
 
