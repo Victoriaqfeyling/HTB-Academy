@@ -53,12 +53,51 @@ SERVICE_NAME: AppReadiness
 
 ## 3) Comprobar permisos del servicio con PsService
 
-**Herramienta**: `PsService.exe` (parte de Sysinternals). Funciona similar a `sc` pero puede mostrar detalles de seguridad y controlar servicios localmente o remotamente.
+**Herramienta**: [`PsService.exe`](https://learn.microsoft.com/es-es/sysinternals/downloads/psservice) (parte de Sysinternals). Funciona similar a `sc` pero puede mostrar detalles de seguridad y controlar servicios localmente o remotamente.
 
 **Comando usado**:
 
 ```
 C:\Tools\PsService.exe security AppReadiness
+
+PsService v2.25 - Service information and configuration utility
+Copyright (C) 2001-2010 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+SERVICE_NAME: AppReadiness
+DISPLAY_NAME: App Readiness
+        ACCOUNT: LocalSystem
+        SECURITY:
+        [ALLOW] NT AUTHORITY\SYSTEM
+                Query status
+                Query Config
+                Interrogate
+                Enumerate Dependents
+                Pause/Resume
+                Start
+                Stop
+                User-Defined Control
+                Read Permissions
+        [ALLOW] BUILTIN\Administrators
+                All
+        [ALLOW] NT AUTHORITY\INTERACTIVE
+                Query status
+                Query Config
+                Interrogate
+                Enumerate Dependents
+                User-Defined Control
+                Read Permissions
+        [ALLOW] NT AUTHORITY\SERVICE
+                Query status
+                Query Config
+                Interrogate
+                Enumerate Dependents
+                User-Defined Control
+                Read Permissions
+        [ALLOW] BUILTIN\Server Operators
+                All
+
+
 ```
 
 **Explicación de la sintaxis**:
