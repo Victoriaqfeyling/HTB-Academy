@@ -417,6 +417,10 @@ A continuación ejecutamos la `PoC` para habilitar privilegio:
 .\EnableSeLoadDriverPrivilege.exe
 ```
 <img width="993" height="141" alt="image" src="https://github.com/user-attachments/assets/2aa63118-b1ab-40de-b4f7-5c3187998fe3" />
+Luego ejecutamos el 
+```powershell
+whoami /priv
+```
 
 
 
