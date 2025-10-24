@@ -351,7 +351,8 @@ Abrimos una powershell y visualizamos los privilegios con el suiguiente comando:
 whoami/ priv
 ```
 
-<img width="962" height="330" alt="image" src="https://github.com/user-attachments/assets/a03f4d6a-425c-4b66-be2c-6c54a434813c" />
+<img width="1687" height="261" alt="image" src="https://github.com/user-attachments/assets/07d90b6f-3b5b-4b97-aa06-ba5f6724b350" />
+
 
 Vemos que `SeLoadDriverPrivilege` no aparece entre los privilegios que tenemos.
 
