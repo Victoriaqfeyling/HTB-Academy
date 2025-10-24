@@ -408,8 +408,17 @@ El paso siguiente es verificar con DriverView.exe no este cargado:
 .\DriverView.exe /stext drivers.txt
 cat drivers.txt | Select-String -pattern Capcom
 ```
-Y efectivamente es asi
+Y efectivamente es asi ya que no recibimos salida:
 
 <img width="480" height="95" alt="image" src="https://github.com/user-attachments/assets/8f5ec0b7-edf4-480a-9e2d-c2baf8f4a0b4" />
+
+A continuación ejecutamos la `PoC` para habilitar privilegio:
+```powershell
+.\EnableSeLoadDriverPrivilege.exe
+```
+<img width="993" height="141" alt="image" src="https://github.com/user-attachments/assets/2aa63118-b1ab-40de-b4f7-5c3187998fe3" />
+
+
+
 
 
