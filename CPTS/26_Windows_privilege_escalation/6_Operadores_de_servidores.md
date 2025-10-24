@@ -319,3 +319,20 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:cf3a5525ee9414229e66279623ed5
 * Con una cuenta local en Administrators sobre un Controlador de Dominio (o acceso administrativo al host), es posible autenticar contra el DC y extraer credenciales del AD (ejemplo con `crackmapexec` y `secretsdump.py`).
 
 ---
+
+# Laboratorio
+Escale los privilegios utilizando los métodos que se muestran en esta sección y envíe el contenido de la flag ubicado en c:\Users\Administrator\Desktop\ServerOperators\flag.txt
+
+`IP`:10.129.43.42
+`USUARIO`:server_adm 
+`PSSWORD`:HTB_@cademy_stdnt!
+
+
+Nos conectamos al host mediante `RDP`
+```bash
+xfreerdp3 /v:10.129.43.42 /u:server_adm
+```
+<img width="1057" height="811" alt="image" src="https://github.com/user-attachments/assets/f3b808e3-4f26-4771-94ad-aeedf1803f10" />
+
+
+
