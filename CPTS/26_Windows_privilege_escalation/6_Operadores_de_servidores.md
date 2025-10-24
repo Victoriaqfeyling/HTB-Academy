@@ -136,7 +136,7 @@ Otra línea relevante:
         All
 ```
 
-* `BUILTIN\Server Operators` tiene `All` sobre el servicio: significa control total (equivalente a `SERVICE_ALL_ACCESS`).
+* `BUILTIN\Server Operators` tiene `All` sobre el servicio: significa control total (equivalente a [`SERVICE_ALL_ACCESS`](https://learn.microsoft.com/es-es/windows/win32/services/service-security-and-access-rights#access-rights-for-a-service)).
 * Consecuencia: un miembro del grupo puede modificar la configuración del servicio, incluyendo la ruta del binario.
 
 ---
