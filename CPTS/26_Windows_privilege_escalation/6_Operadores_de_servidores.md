@@ -297,7 +297,7 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:cf3a5525ee9414229e66279623ed5
 ```
 
 * `Administrator` → nombre de cuenta.
-* `500` → RID (identificador relativo) del usuario.
+* `500` → RID (identificador rela`SERVICE_ALL_ACCESS`tivo) del usuario.
 * `aad3...` → LM hash (a menudo un valor constante si LM no está usado).
 * `cf3a...` → NT hash (NTLM hash) de la contraseña.
 * También muestra las claves de Kerberos (`aes256-cts-hmac-sha1-96`, etc.) si están disponibles.
@@ -305,6 +305,13 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:cf3a5525ee9414229e66279623ed5
 ---
 
 ## 10) Resumen técnico estrictamente según el texto
+`Condiciones del servicio a explotar`: 
+
+1 - El servicio debe ejecutarse como `LocalSystem` para posteriormente poder ejecutar comandos como `SYSTEM`. 
+2 - El grupo al que pertenecemos debe tener `SERVICE_ALL_ACCESS` en el descriptor de seguridad del servicio para poder cambiar su configuración.
+
+`Nota`:En la `DACL`se necesita, como minimo. el derecho `SERVICE_CHANG_CONFIG` (en la práctica `SERVICE_ALL_ACCESS` también funciona)
+
 
 * Ser miembro de `Server Operators` confiere controles sobre servicios (incluyendo `SERVICE_ALL_ACCESS` en AppReadiness en este ejemplo).
 * Cambiar `binPath` de un servicio que corre como `LocalSystem` permite ejecutar comandos con los privilegios de `LocalSystem` cuando el servicio se inicia (la técnica aplicada aquí consistió en apuntar `binPath` a un `cmd /c` que modifica el grupo de Administradores locales).
