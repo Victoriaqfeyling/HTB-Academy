@@ -163,9 +163,6 @@ Administrator
 Domain Admins
 Enterprise Admins
 ```
-
-(lo anterior indica los miembros actuales del grupo `Administrators`).
-
 ---
 
 ## 5) Modificar la ruta binaria del servicio (Service Binary Path)
