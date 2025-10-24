@@ -416,11 +416,19 @@ A continuación ejecutamos la `PoC` para habilitar privilegio:
 ```powershell
 .\EnableSeLoadDriverPrivilege.exe
 ```
-<img width="993" height="141" alt="image" src="https://github.com/user-attachments/assets/2aa63118-b1ab-40de-b4f7-5c3187998fe3" />
-Luego ejecutamos el 
+<img width="993" height="141" alt="image" src="https://github.com/user-attachments/assets/2aa63118-b1ab-40de-b4f7-5c3187998fe3" /> 
+
+Luego ejecutamos el comando: 
+
 ```powershell
 whoami /priv
 ```
+
+Vemos que `SeLoadDriverPrivilege` figura `Disabled`
+
+<img width="988" height="161" alt="image" src="https://github.com/user-attachments/assets/6c41e1b3-31a6-4753-8169-c5650194e794" />
+
+
 
 
 
