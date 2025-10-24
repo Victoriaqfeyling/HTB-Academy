@@ -400,6 +400,7 @@ Utilizamos los siguientes comandos:
 reg add HKCU\System\CurrentControlSet\CAPCOM /v ImagePath /t REG_SZ /d "\??\C:\Tools\Capcom.sys"  
 reg add HKCU\System\CurrentControlSet\CAPCOM /v Type /t REG_DWORD /d 1
 ```
+<img width="964" height="130" alt="image" src="https://github.com/user-attachments/assets/2e5215b8-5f48-4115-8d92-f3337d4c6753" />
 
 
 
