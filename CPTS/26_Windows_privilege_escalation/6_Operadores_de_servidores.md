@@ -334,5 +334,25 @@ xfreerdp3 /v:10.129.43.42 /u:server_adm
 ```
 <img width="1057" height="811" alt="image" src="https://github.com/user-attachments/assets/f3b808e3-4f26-4771-94ad-aeedf1803f10" />
 
+El primer paso es consultar a qué grupo pertenece nuestro usuario mediante una powershell elevada:
+
+```powershell
+whoami /groups
+```
+<img width="835" height="454" alt="image" src="https://github.com/user-attachments/assets/5395ee9d-0430-4de0-9fcc-ea25df61be10" />
+
+Confirmamos que somos miembros de `Server Operators`.
+
+A continuación consultamos el servicio AppReadiness:
+
+```powershel
+sc.exe qc AppReadiness
+```
+<img width="763" height="274" alt="image" src="https://github.com/user-attachments/assets/464daff4-b66e-4378-a068-ab3949c9c0dc" />
+
+Confirmamos que se ejecuta como `LocalSystem`. Esto nos permitira ejecutar comandos como SYSTEM
+
+
+
 
 
