@@ -395,7 +395,19 @@ net localgroup Administrators
 ```
 <img width="790" height="273" alt="image" src="https://github.com/user-attachments/assets/b2f2d0f2-aaf2-4636-9ce3-1e2817098c1a" />
 
+Intentamos abrir el archivo que contiene la flag pero no tenemos acceso
 
+<img width="847" height="338" alt="image" src="https://github.com/user-attachments/assets/c5288951-b8b2-4286-aa97-c66ac912cc6f" />
+Esto sucede porque necesitamos reiniciar el sistema con `shutdown /f` para que se cree el nuevo token que incluya la pertenencia a `Administrators`:
+
+Tras haber reiniciado abrimos el archivo utilizando una powershell elevada:
+```powershell
+cat C:\Users\Administrator\Desktop\ServerOperators\flag.txt
+```
+
+<img width="799" height="271" alt="image" src="https://github.com/user-attachments/assets/e1e73ac3-a937-4b81-abd8-753c6206b07d" />
+
+`Flag`: `S3rver_0perators_@ll_p0werfull!`
 
 
 
