@@ -364,8 +364,10 @@ whoami /groups
 <img width="903" height="295" alt="image" src="https://github.com/user-attachments/assets/f1be67ab-77e6-4729-93db-b9253c6adab9" />
 
 Confirmamos que pertenecemos al grupo `Print Operators` ya que aparece la linea `BUILTIN\Print Operators`.
+
 Entonces, debido a que nuestra `PowerShell` no es elevada, es probable que nuestro token se encuentre limitado por UAC.
-En este punto tenemos dos alternativas:
+
+En este punto, tenemos dos alternativas:
 
 - Utilizar el repo ["UACMe" (lista de bypasses de UAC)](https://github.com/hfiref0x/UACME)
 - Abrir una consola administrativa desde GUI e introducir credenciales de la cuenta miembro de `Print Operators`.
@@ -374,7 +376,12 @@ Abrimos una powershell elevada y realizamos el comando `whoami /priv`:
 
 <img width="636" height="264" alt="image" src="https://github.com/user-attachments/assets/6f2867f7-ba6f-4526-836a-7b725905da0d" />
 
-Observamos que esta vez el privilegio `SeLoadDriverPrivilege` aparece `Disable`
+Observamos que esta vez el privilegio `SeLoadDriverPrivilege` aparece `Disabled`.
+
+---
+
+
+El siguiente paso es habilitar `SeLoadDriverPrivilege` con la PoC.
 
 
 
