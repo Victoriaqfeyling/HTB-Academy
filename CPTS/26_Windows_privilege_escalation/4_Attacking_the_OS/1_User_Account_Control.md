@@ -28,7 +28,7 @@
   * `FilterAdministratorToken` — Admin Approval Mode para la cuenta integrada (por defecto: Disabled)
   * `EnableUIADesktopToggle` — Permite a aplicaciones con UIAccess pedir elevación sin el secure desktop (por defecto: Disabled)
   * `ConsentPromptBehaviorAdmin` — Comportamiento del prompt para administradores en Admin Approval Mode (por defecto: "Prompt for consent for non-Windows binaries")
-  * `ConsentPromptBehaviorUser` — Comportamiento del prompt para usuarios estándar (por defecto: "Prompt for credentials on the secure desktop")
+  * `ConsentPromptBehaviorUser` — Comportamiento del prompt para usuarios estándar (por defecto: "Prompt for credentials")
   * `EnableInstallerDetection` — Detectar instalaciones y pedir elevación (Enabled por defecto en Home, Disabled en Enterprise)
   * `ValidateAdminCodeSignatures` — Sólo elevar ejecutables firmados y validados (Disabled)
   * `EnableSecureUIAPaths` — Sólo elevar UIAccess instalados en ubicaciones seguras (Enabled)
