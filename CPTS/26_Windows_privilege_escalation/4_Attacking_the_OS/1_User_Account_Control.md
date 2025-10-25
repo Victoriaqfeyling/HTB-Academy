@@ -2,7 +2,7 @@
 
 ## 1. UAC
 
-* **Definición:** User Account Control (UAC) es una característica de Windows que muestra un *prompt* de consentimiento para actividades que requieren privilegios elevados. Su función principal es evitar cambios no intencionados aun cuando el usuario sea administrador.
+* **Definición:** [User Account Control](https://learn.microsoft.com/es-es/windows/security/application-security/application-control/user-account-control/how-it-works) es una característica de Windows que muestra un *prompt* de consentimiento para actividades que requieren privilegios elevados. Su función principal es evitar cambios no intencionados aun cuando el usuario sea administrador.
 * **Integridad y niveles:** Las aplicaciones tienen distintos *integrity levels* (niveles de integridad). Un programa con un nivel alto puede realizar tareas que podrían comprometer el sistema.
 * **Contexto de ejecución:** Con UAC activado, las aplicaciones y tareas normalmente se ejecutan bajo el contexto de una **cuenta no administradora** a menos que un administrador autorice explícitamente elevarlas.
 * **Conveniencia, no barrera de seguridad:** UAC es una característica de conveniencia que protege contra cambios accidentales por parte de administradores, pero **no** se considera una barrera de seguridad inquebrantable.
