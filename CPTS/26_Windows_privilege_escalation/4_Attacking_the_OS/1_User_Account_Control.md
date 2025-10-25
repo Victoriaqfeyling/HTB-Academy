@@ -18,6 +18,9 @@
 ---
 
 ## 3. Los ajustes de UAC en Group Policy y el registro
+- [`Funcionamiento de UAC`](https://learn.microsoft.com/es-es/windows/security/application-security/application-control/user-account-control/how-it-works)
+- [`Configuración y opciones`](https://learn.microsoft.com/es-es/windows/security/application-security/application-control/user-account-control/settings-and-configuration?tabs=intune)
+
 
 * **Configuración mediante políticas:** Los administradores pueden configurar UAC localmente con `secpol.msc` o mediante GPO en entornos AD.
 * **Tabla de settings:**
