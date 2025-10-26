@@ -400,5 +400,15 @@ Siga los pasos de esta sección para obtener una conexión de shell inversa con 
 `USUARIO`:sarah
 `PASSWORD`:HTB_@cademy_stdnt!
 
+Nos conectamos al host mediante `RDP`:
+```bash
+xfreerdp3 /v:10.129.166.145 /u:sarah
+```
+
+<img width="1029" height="801" alt="image" src="https://github.com/user-attachments/assets/e438c794-ffc8-455c-b3e0-0b6ad5da4341" />
+
+
+
+
 
 
