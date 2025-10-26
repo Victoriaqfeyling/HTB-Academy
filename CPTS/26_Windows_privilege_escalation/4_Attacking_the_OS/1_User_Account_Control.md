@@ -392,4 +392,13 @@ SeDelegateSessionUserImpersonatePrivilege Obtain an impersonation token for anot
 * El ejemplo sigue los pasos: identificar build, seleccionar técnica compatible (UACME técnica 54), preparar payload (DLL), colocarla en ruta del usuario, ejecutar el binario auto-elevador 32-bit y obtener shell elevada.
 
 ---
+# Laboratorio:
+Siga los pasos de esta sección para obtener una conexión de shell inversa con privilegios de usuario normales y otra que omita el UAC. Envíe el contenido de flag.txt que se encuentra en el escritorio de Sarah al finalizar.
+
+
+`IP`:10.129.166.145
+`USUARIO`:sarah
+`PASSWORD`:HTB_@cademy_stdnt!
+
+
 
