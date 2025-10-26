@@ -435,6 +435,8 @@ whoami /priv
 ```
 <img width="941" height="288" alt="image" src="https://github.com/user-attachments/assets/80886ca5-ec46-4189-8bb0-0ffab5c6797c" />
 
+Por más que seamos administradores, los privilegios elevados aparecen dehabilitados ya que el proceso corre con el token limitado
+
 
 
 
