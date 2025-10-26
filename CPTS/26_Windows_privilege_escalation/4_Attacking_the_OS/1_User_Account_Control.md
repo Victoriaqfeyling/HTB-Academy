@@ -157,6 +157,8 @@ Major  Minor  Build  Revision
 * **Técnica 54:** Indica que funciona a partir del *build* `14393` y ataca la versión de 32 bits del binario auto-elevador `SystemPropertiesAdvanced.exe`.
 * **Objetivo:** Aprovechar binarios de confianza que Windows auto-eleva sin pedir consentimiento.
 
+[Publicación](https://egre55.github.io/system-properties-uac-bypass/)
+
 ---
 
 ## 9. Concepto: DLL search order y DLL hijacking
