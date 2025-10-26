@@ -407,6 +407,19 @@ xfreerdp3 /v:10.129.166.145 /u:sarah
 
 <img width="1029" height="801" alt="image" src="https://github.com/user-attachments/assets/e438c794-ffc8-455c-b3e0-0b6ad5da4341" />
 
+Luego abrimos una powershell y confirmamos nuestro usuario actual y pertenencia a grupos:
+
+```powershell
+whoami /user
+```
+
+<img width="808" height="321" alt="image" src="https://github.com/user-attachments/assets/89c6452f-0dc7-4039-a4f6-b19056ea60ea" />
+
+```powershell
+whoami /groups
+```
+<img width="1026" height="522" alt="image" src="https://github.com/user-attachments/assets/5d5950e9-df46-4a98-afe8-635663cbb6b3" />
+
 
 
 
