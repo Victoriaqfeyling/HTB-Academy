@@ -415,10 +415,27 @@ whoami /user
 
 <img width="808" height="321" alt="image" src="https://github.com/user-attachments/assets/89c6452f-0dc7-4039-a4f6-b19056ea60ea" />
 
+
+
 ```powershell
-whoami /groups
+net localgroup administrators
 ```
-<img width="1026" height="522" alt="image" src="https://github.com/user-attachments/assets/5d5950e9-df46-4a98-afe8-635663cbb6b3" />
+
+<img width="937" height="239" alt="image" src="https://github.com/user-attachments/assets/9ffa132d-c943-4604-ac9a-5c04726610b8" />
+
+
+Con estos resultados confirmamos que nuestro usuario es sarah y pertenece al grupo `Administrators`
+
+Listamos los privilegios existentes en el token actual:
+
+```powershell
+
+whoami /priv
+
+```
+<img width="941" height="288" alt="image" src="https://github.com/user-attachments/assets/80886ca5-ec46-4189-8bb0-0ffab5c6797c" />
+
+
 
 
 
