@@ -286,6 +286,14 @@ SeTimeZonePrivilege           Change the time zone                 Disabled
 
 ### `tasklist /svc | findstr "rundll32"`
 
+```
+C:\htb> tasklist /svc | findstr "rundll32"
+rundll32.exe                  6300 N/A
+rundll32.exe                  5360 N/A
+rundll32.exe                  7044 N/A
+```
+
+
 * **`tasklist /svc`** lista procesos y servicios asociados. `findstr "rundll32"` filtra las líneas que contienen `rundll32`.
 * **Salida en el texto:** Muestra varios procesos `rundll32.exe` con distintos PIDs.
 
@@ -293,6 +301,17 @@ SeTimeZonePrivilege           Change the time zone                 Disabled
 
 * **`taskkill`** mata procesos por PID. ` /F` fuerza la terminación.
 * **Uso en el ejemplo:** Se terminan los procesos `rundll32.exe` residuales antes de ejecutar el binario auto-elevador para asegurar comportamiento consistente.
+
+```
+C:\htb> taskkill /PID 7044 /F
+SUCCESS: The process with PID 7044 has been terminated.
+
+C:\htb> taskkill /PID 6300 /F
+SUCCESS: The process with PID 6300 has been terminated.
+
+C:\htb> taskkill /PID 5360 /F
+SUCCESS: The process with PID 5360 has been terminated.
+```
 
 ---
 
