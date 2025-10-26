@@ -127,7 +127,7 @@ C:\htb> REG QUERY HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\P
 ```
 
 * **Qué hace:** Consulta el comportamiento del prompt para administradores.
-* **Interpretación del valor `0x5`:** En la tabla de UAC, `ConsentPromptBehaviorAdmin = 0x5` corresponde al nivel más alto: **Always notify** (siendo el valor mostrado en este ejemplo equivalente a la configuración que provoca notificaciones más restrictivas y que reduce la cantidad de bypasses disponibles).
+* **Interpretación del valor `0x5`:** En la tabla de UAC, `ConsentPromptBehaviorAdmin = 0x5` corresponde al nivel más alto: **Always notify** (siendo el valor mostrado en este ejemplo equivalente a la configuración que provoca notificaciones más restrictivas y que reduce la cantidad de bypasses disponibles). Prompt solo cuando el ejecutable no pertenece a Microsoft.
 
 ---
 
