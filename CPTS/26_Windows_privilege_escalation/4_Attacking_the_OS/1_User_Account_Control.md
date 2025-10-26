@@ -48,7 +48,7 @@ El ejemplo menciona un prompt pidiendo permiso para que el Editor del Registro h
 
 ---
 
-## 5. Confirmar usuario actual y pertenencia a grupos — comandos usados y su explicación
+## 5. Confirmar usuario actual y pertenencia a grupos
 
 ### Comando `whoami /user`
 
