@@ -103,7 +103,7 @@ Privilege Name                Description                          State
 
 ---
 
-## 6. Confirmar si UAC está habilitado — comandos y registro
+## 6. Confirmar si UAC está habilitado
 
 ### `REG QUERY` para `EnableLUA`
 
