@@ -486,6 +486,22 @@ findstr /C:\"<autoElevate>true" C:\Windows\SysWOW64\SystempropertiesAdvanced.exe
 
 Esto es una evidencia de que el ejecutable contiene un manifiesto con `autoElevate=true`, es decir, el binario solicita que ciertas invocaciones se les conceda elevaciones automáticas.
 
+Nosostros sabemos que el binario intenta cargar la dll `srrstr.dll`, la cuál no existe.
+
+En el momento en que se intente ejecutar el binario `SystempropertiesAdvanced.exe` el sistema irá a buscar la dll al Path.
+
+Seguidamente revisamos la variable `Path`
+
+```powershell
+cmd /c echo %PATH%
+```
+<img width="998" height="109" alt="image" src="https://github.com/user-attachments/assets/3eae6af4-5ec3-4622-9a20-3b9335d9e89b" />
+
+Encontramos en el path la ruta `C:\Users\sarah\AppData\Local\Microsoft\WindowsApps` 
+Nuestro usuario tiene permiso de escritura sobre esa ruta. Esto quiere decir que podriamos colocar una dll maliciosa con el nombre `srrstr.dll` en esa ruta y lograr que el binario la ejecute en un contexto elevado
+
+
+
 
 
 
