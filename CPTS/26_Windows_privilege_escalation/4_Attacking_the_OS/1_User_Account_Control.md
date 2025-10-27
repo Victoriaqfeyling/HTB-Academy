@@ -459,7 +459,13 @@ REG QUERY HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\
 
 EL valor 0x5 corresponde solo cuando el ejecutable no pertenece a Microsoft.
 
-Ahora vemos la version del sistema operativo y la build
+Ahora vemos la version del sistema operativo y la build:
+```powershell
+
+[environment]::OSVersion.Version
+```
+<img width="845" height="104" alt="image" src="https://github.com/user-attachments/assets/d6197850-a07b-458c-9df9-29cca769f586" />
+
 
 
 
