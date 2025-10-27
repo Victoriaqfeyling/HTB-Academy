@@ -468,6 +468,14 @@ Ahora vemos la version del sistema operativo y la build:
 
 <img width="968" height="423" alt="image" src="https://github.com/user-attachments/assets/3055a073-92c6-42e1-bdba-7d161a7909e4" />
 
+Build `14393` correspondiente a Windows 10 release `1607`
+
+En el proyecto `UACME` notamos que la build 14393 es vulnerable a la técnica 54:
+
+<img width="1303" height="433" alt="image" src="https://github.com/user-attachments/assets/5f385c93-f05d-4a0a-892a-394acfc5b88b" />
+
+
+
 
 
 
