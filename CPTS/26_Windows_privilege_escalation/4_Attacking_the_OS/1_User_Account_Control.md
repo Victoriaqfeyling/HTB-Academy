@@ -561,6 +561,20 @@ taskkill /PID 5956 /F
 ```
 <img width="752" height="158" alt="image" src="https://github.com/user-attachments/assets/34a77b8f-47ab-446a-94c7-8ce3e9175fb9" />
 
+El último paso es ejecutar la versión `32-bit de SystemPropertiesAdvanced.exe`:
+```powershell
+
+C:\Windows\SysWOW64\SystemPropertiesAdvanced.exe
+```
+<img width="781" height="79" alt="image" src="https://github.com/user-attachments/assets/931b2941-4961-4527-8289-529b92609a63" />
+
+Vemos que obtuvimos la shell reversa con contexto elevado.
+
+
+<img width="1211" height="757" alt="image" src="https://github.com/user-attachments/assets/6596fb6b-de6b-4f13-9ee7-6121d8d42dd4" />
+
+Obtenemos la flag:
+<img width="756" height="102" alt="image" src="https://github.com/user-attachments/assets/8af8f217-55f8-4082-8fbc-8a371481a600" />
 
 
 
