@@ -2,7 +2,7 @@
 
 ## 1) Introducción
 
-* Concepto: Las ACLs (listas de control de acceso) en Windows son complejas. Un pequeño cambio puede crear una vulnerabilidad en otra parte.
+* Concepto: Las ACLs en Windows son complejas. Un pequeño cambio puede crear una vulnerabilidad en otra parte.
 * Relevancia para pentesters: comprobar permisos débiles en ficheros, servicios y registro puede conducir a escalada de privilegios, especialmente porque muchos servicios se instalan para ejecutarse como SYSTEM.
 
 ---
