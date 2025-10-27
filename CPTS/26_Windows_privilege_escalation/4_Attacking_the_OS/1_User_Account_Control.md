@@ -444,7 +444,21 @@ REG QUERY HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\
 ```
 <img width="1005" height="239" alt="image" src="https://github.com/user-attachments/assets/a838b954-b127-46a8-ac44-726244eab94b" />
 
-El valor 0x1 indica que está habilitado
+El valor 0x1 indica que UAC está habilitado.
+
+Ahora consultamos el Prompt para administradores: 
+
+```powershell
+
+REG QUERY HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ /v ConsentPromptBehaviorAdmin
+```
+
+
+<img width="1019" height="100" alt="image" src="https://github.com/user-attachments/assets/fc2d0aad-f619-4e77-a97a-b759463ef797" />
+
+
+EL valor 0x5 corresponde solo cuando el ejecutable no pertenece a Microsoft
+
 
 
 
