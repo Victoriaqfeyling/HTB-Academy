@@ -396,16 +396,17 @@ SeDelegateSessionUserImpersonatePrivilege Obtain an impersonation token for anot
 Siga los pasos de esta sección para obtener una conexión de shell inversa con privilegios de usuario normales y otra que omita el UAC. Envíe el contenido de flag.txt que se encuentra en el escritorio de Sarah al finalizar.
 
 
-`IP`:10.129.166.145
+`IP`:10.129.170.224
 `USUARIO`:sarah
 `PASSWORD`:HTB_@cademy_stdnt!
 
 Nos conectamos al host mediante `RDP`:
 ```bash
-xfreerdp3 /v:10.129.166.145 /u:sarah
+xfreerdp3 /v:10.129.170.224 /u:sarah
 ```
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/5dcc6a09-1eec-4675-9f91-d5ad44ae19f4" />
 
-<img width="1029" height="801" alt="image" src="https://github.com/user-attachments/assets/e438c794-ffc8-455c-b3e0-0b6ad5da4341" />
+
 
 Luego abrimos una powershell y confirmamos nuestro usuario actual y pertenencia a grupos:
 
@@ -484,6 +485,7 @@ findstr /C:\"<autoElevate>true" C:\Windows\SysWOW64\SystempropertiesAdvanced.exe
 <img width="1010" height="198" alt="image" src="https://github.com/user-attachments/assets/4afaee0b-6493-4240-80c8-bf2c70133bf6" />
 
 Esto es una evidencia de que el ejecutable contiene un manifiesto con `autoElevate=true`, es decir, el binario solicita que ciertas invocaciones se les conceda elevaciones automáticas.
+
 
 
 
