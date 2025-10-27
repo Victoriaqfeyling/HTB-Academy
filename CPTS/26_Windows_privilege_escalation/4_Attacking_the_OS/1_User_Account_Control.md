@@ -474,7 +474,14 @@ En el proyecto `UACME` notamos que la build 14393 es vulnerable a la técnica 54
 
 <img width="1303" height="433" alt="image" src="https://github.com/user-attachments/assets/5f385c93-f05d-4a0a-892a-394acfc5b88b" />
 
+La técnica dice que el binario `\SysWOW64\SystemPropertiesAdvanced.exe` es autoelevado. utilizamos el siguiente comando para confirmarlo:
 
+```powershell
+
+findstr /C:\"<autoElevate>true" C:\Windows\SysWOW64\SystempropertiesAdvanced.exe
+```
+
+<img width="1010" height="198" alt="image" src="https://github.com/user-attachments/assets/4afaee0b-6493-4240-80c8-bf2c70133bf6" />
 
 
 
