@@ -466,6 +466,9 @@ Ahora vemos la version del sistema operativo y la build:
 ```
 <img width="845" height="104" alt="image" src="https://github.com/user-attachments/assets/d6197850-a07b-458c-9df9-29cca769f586" />
 
+<img width="968" height="423" alt="image" src="https://github.com/user-attachments/assets/3055a073-92c6-42e1-bdba-7d161a7909e4" />
+
+
 
 
 
