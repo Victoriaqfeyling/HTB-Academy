@@ -457,7 +457,9 @@ REG QUERY HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\
 <img width="1019" height="100" alt="image" src="https://github.com/user-attachments/assets/fc2d0aad-f619-4e77-a97a-b759463ef797" />
 
 
-EL valor 0x5 corresponde solo cuando el ejecutable no pertenece a Microsoft
+EL valor 0x5 corresponde solo cuando el ejecutable no pertenece a Microsoft.
+
+Ahora vemos la version del sistema operativo y la build
 
 
 
