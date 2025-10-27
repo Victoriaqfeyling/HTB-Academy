@@ -483,6 +483,8 @@ findstr /C:\"<autoElevate>true" C:\Windows\SysWOW64\SystempropertiesAdvanced.exe
 
 <img width="1010" height="198" alt="image" src="https://github.com/user-attachments/assets/4afaee0b-6493-4240-80c8-bf2c70133bf6" />
 
+Esto es una evidencia de que el ejecutable contiene un manifiesto con `autoElevate=true`, es decir, el binario solicita que ciertas invocaciones se les conceda elevaciones automáticas.
+
 
 
 
