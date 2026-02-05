@@ -192,3 +192,17 @@ WHOIS es una herramienta fundamental dentro del **Information Gathering**, espec
 * Enriquecer reportes de Threat Intelligence
 
 Sin embargo, su verdadero valor surge cuando se **correlaciona con otras fuentes de información**, permitiendo construir un panorama más completo y accionable del entorno analizado.
+
+---
+
+# Preguntas
+
+Realice una búsqueda de WHOIS para el dominio paypal.com. ¿Cuál es el número de identificación de la Autoridad de números asignados de internet (IANA) del registrador?
+
+
+
+
+¿Cuál es el contacto de correo electrónico del administrador para el dominio tesla.com (también dentro del alcance del programa de recompensa por errores de Tesla)?
+
+
+
