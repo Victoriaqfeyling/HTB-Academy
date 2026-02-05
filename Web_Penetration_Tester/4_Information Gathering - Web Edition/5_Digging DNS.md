@@ -202,3 +202,6 @@ Dominar dig marca una diferencia clara entre un reconocimiento superficial y uno
 
 
 ## ¿Cuál es el dominio completo que se devuelve cuando se consultan los registros de correo de facebook.com?
+
+<img width="1191" height="630" alt="image" src="https://github.com/user-attachments/assets/1c2c439b-c5c3-4f53-a8b5-7d9bac37c568" />
+
