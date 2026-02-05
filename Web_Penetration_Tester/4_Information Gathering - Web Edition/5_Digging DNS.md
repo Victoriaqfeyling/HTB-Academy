@@ -189,6 +189,9 @@ Dominar dig marca una diferencia clara entre un reconocimiento superficial y uno
 
 ## ¿Qué dirección IP corresponde a inlanefreight.com?
 
+<img width="523" height="121" alt="image" src="https://github.com/user-attachments/assets/b4c641e1-399b-4c5b-bdbe-32f42e092a7e" />
+
+
 
 
 ## ¿Qué dominio se devuelve al consultar el registro PTR para 134.209.24.248?
