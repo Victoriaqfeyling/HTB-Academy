@@ -199,10 +199,12 @@ Sin embargo, su verdadero valor surge cuando se **correlaciona con otras fuentes
 
 Realice una búsqueda de WHOIS para el dominio paypal.com. ¿Cuál es el número de identificación de la Autoridad de números asignados de internet (IANA) del registrador?
 
+<img width="1452" height="721" alt="image" src="https://github.com/user-attachments/assets/5c7a8dfe-1709-4142-b069-62b29194f919" />
 
 
 
 ¿Cuál es el contacto de correo electrónico del administrador para el dominio tesla.com (también dentro del alcance del programa de recompensa por errores de Tesla)?
 
+<img width="811" height="160" alt="image" src="https://github.com/user-attachments/assets/19726523-7a12-4e5f-aa75-549d37c7a588" />
 
 
