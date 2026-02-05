@@ -34,8 +34,6 @@ Updated Date: 2023-07-03T01:11:15Z
 Creation Date: 2019-08-05T22:43:09Z
 ```
 
-> 📸 **Acá pegá la captura del comando WHOIS ejecutado en la máquina de HTB**.
-
 ---
 
 ## Información que suele contener un registro WHOIS
