@@ -123,7 +123,7 @@ Los cambios tienen efecto inmediato y requieren permisos de administrador/root.
 192.168.1.20    testserver.local
 ```
 
-* Bloquear sitios no deseados:
+* Bloquear sitios no deseados redirigiendo sus dominios a una dirección IP inexistente:
 
 ```text
 0.0.0.0         unwanted-site.com
@@ -190,10 +190,10 @@ ftp IN CNAME www.example.com.
 
 * **Domain Name:** nombre legible (ej: `www.example.com`).
 * **IP Address:** identificador numérico (ej: `192.0.2.1`).
-* **DNS Resolver:** traduce nombres a IPs.
-* **Root Name Server:** punto más alto de la jerarquía DNS.
-* **TLD Name Server:** gestiona dominios `.com`, `.org`, etc.
-* **Authoritative Name Server:** contiene la información final del dominio.
+* **DNS Resolver:** traduce nombres a IPs, puede ser el swervidor DNS de su ISP o resolvers públicos como Google DNS (8.8.8.8).
+* **Root Name Server:** punto más alto de la jerarquía DNS. Hay 13 servidores raíz en todo el mundo llamados A-M: a.root-servers.net
+* **TLD Name Server:** gestiona dominios `.com`, `.org`, etc. [Verisign](https://en.wikipedia.org/wiki/Verisign) para `.com` y [PIR](https://en.wikipedia.org/wiki/Public_Interest_Registry) para `.org`
+* **Authoritative Name Server:** contiene la información final del dominio. Contiene la dirección IP real de un dominio.
 
 ---
 
@@ -231,7 +231,7 @@ DNS es una fuente crítica de información durante el reconocimiento web:
 * Servidores de correo
 * Infraestructura de DNS
 
-Un CNAME mal configurado puede apuntar a servidores obsoletos o vulnerables.
+Un CNAME mal configurado puede apuntar a servidores obsoletos o vulnerables. Por ejemplo apuntar a `dev.example.com` o a `oldserver.example.com`
 
 ---
 
