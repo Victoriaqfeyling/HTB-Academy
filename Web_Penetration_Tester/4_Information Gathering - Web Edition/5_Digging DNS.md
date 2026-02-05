@@ -196,6 +196,9 @@ Dominar dig marca una diferencia clara entre un reconocimiento superficial y uno
 
 ## ¿Qué dominio se devuelve al consultar el registro PTR para 134.209.24.248?
 
+<img width="1069" height="115" alt="image" src="https://github.com/user-attachments/assets/e36168cc-3725-484f-8acc-757a4276b061" />
+
+
 
 
 ## ¿Cuál es el dominio completo que se devuelve cuando se consultan los registros de correo de facebook.com?
