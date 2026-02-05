@@ -252,6 +252,7 @@ Mediante servicios de terceros (por ejemplo, historiales de WHOIS), es posible o
 * Evolución de la infraestructura técnica
 
 Este análisis puede revelar **reorganizaciones internas**, **migraciones de infraestructura** o prácticas de seguridad deficientes.
+[Whoisfreaks](https://whoisfreaks.com/)
 
 ---
 
