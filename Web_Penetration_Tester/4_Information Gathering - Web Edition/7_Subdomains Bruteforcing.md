@@ -167,7 +167,7 @@ El **Subdomain Bruteforcing** es una técnica extremadamente poderosa para ampli
 Cuando se combina con:
 
 * Enumeración pasiva
-* Validación manual
+* Validación manual`
 * Buen criterio de OPSEC
 
 permite descubrir activos críticos que suelen quedar fuera del alcance del dominio principal, aportando un **valor real y tangible** al pentest web.
@@ -178,3 +178,11 @@ permite descubrir activos críticos que suelen quedar fuera del alcance del domi
 # Preguntas
 
 ## Utilizando los subdominios conocidos de inlanefreight.com (www, ns1, ns2, ns3, blog, soporte, cliente), encuentre los subdominios faltantes mediante fuerza bruta. Proporcione su respuesta con el subdominio completo, por ejemplo, www.inlanefreight.com.
+
+Utilizamos la herramienta "dnsenum" con el siguiente comando:
+
+```bash
+dnsenum --enum inlanefreight.com --enum inlanefreight.com -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
+```
+
+<img width="1521" height="630" alt="image" src="https://github.com/user-attachments/assets/c63e0864-580e-4cdd-8af1-0111fba156b8" />
