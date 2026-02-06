@@ -219,6 +219,8 @@ dig AXFR @10.129.17.180 inlanefreight.htb
 
 ### Dentro del registro de zona transferido anteriormente, busque la dirección IP de ftp.admin.inlanefreight.htb. Responda solo con la dirección IP, p. ej., 127.0.0.1.
 
+<img width="766" height="78" alt="image" src="https://github.com/user-attachments/assets/d62d1f86-b0d4-4f2c-adb8-347f87956d76" />
 
 
 ### Dentro del mismo registro de zona, identifique la dirección IP más grande asignada dentro del rango de IP 10.10.200. Responda con la dirección IP completa, p. ej., 10.10.200.1.
+<img width="801" height="54" alt="image" src="https://github.com/user-attachments/assets/9b393cbd-ca57-4ea8-8629-61f6b17c51c7" />
