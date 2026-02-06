@@ -203,7 +203,19 @@ Por su **alto impacto y bajo esfuerzo**, verificar la posibilidad de una zone tr
 
 ### Tras realizar una transferencia de zona para el dominio inlanefreight.htb en el sistema de destino, ¿cuántos registros DNS se recuperan del servidor de nombres del sistema de destino? Indique su respuesta como un número entero, por ejemplo, 123.
 
+Al encontrarnos dentro de una red interna no podemos utilizar el comando `dig` utilizando el resolver de nuestro ISP, ya que necesitamos resolver a una ip privada dentro de la intranet. Por lo tanto, necesitamos encontrar el servidor dns para este dominio.
 
+Luego de agregar la ip objetivo al ´etc/hosts´ escaneamos con nmap el dominio:
+
+<img width="891" height="339" alt="image" src="https://github.com/user-attachments/assets/7f64b2bd-0d70-4fb8-913b-cea7e5a2d7f4" />
+
+Descubrimos que el mismo dominio es el servidor dns.
+
+Realizamos la transferfrencia de zona utilizando el siguiente comando:
+```bash
+dig AXFR @10.129.17.180 inlanefreight.htb
+```
+<img width="1662" height="769" alt="image" src="https://github.com/user-attachments/assets/19529079-84a3-449a-9988-211c6d5785f9" />
 
 ### Dentro del registro de zona transferido anteriormente, busque la dirección IP de ftp.admin.inlanefreight.htb. Responda solo con la dirección IP, p. ej., 127.0.0.1.
 
