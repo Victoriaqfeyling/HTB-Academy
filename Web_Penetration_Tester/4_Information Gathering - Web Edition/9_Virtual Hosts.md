@@ -301,15 +301,35 @@ permite descubrir VHosts ocultos que muchas veces contienen **aplicaciones inter
 
 #### Ejecute ataques de fuerza bruta contra hosts virtuales en el sistema objetivo. ¿Cuál es el subdominio completo con el prefijo "web"? Responda usando el dominio completo, por ejemplo, "x.inlanefreight.htb".
 
+Agregamos la ip `154.57.164.82:30188` al /etc/hosts. Una vez realizado esto, realizamos fuzzing de vhost con `goubaster`:
+
+```bash
+
+gobuster vhost -u http://inlanefreight.htb:81 \
+  -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt \
+  --append-domain
+```
+
+<img width="1909" height="787" alt="image" src="https://github.com/user-attachments/assets/a9f7d274-065d-4b57-8686-09706579d582" />
+
+
 
 #### Ejecute ataques de fuerza bruta contra hosts virtuales en el sistema objetivo. ¿Cuál es el subdominio completo con el prefijo "vm"? Responda usando el dominio completo, por ejemplo, "x.inlanefreight.htb".
+
+<img width="1905" height="765" alt="image" src="https://github.com/user-attachments/assets/a799ee57-760e-4c3c-ad5c-efda9bccbe85" />
 
 
 #### Ejecutar ataques de fuerza bruta contra hosts virtuales en el sistema objetivo. ¿Cuál es el subdominio completo con el prefijo "br"? Responda usando el dominio completo, por ejemplo, "x.inlanefreight.htb".
 
+<img width="1807" height="763" alt="image" src="https://github.com/user-attachments/assets/9e54a2e5-e6de-4100-ad3f-062ac81c50c9" />
+
+
 
 #### Ejecutar ataques de fuerza bruta contra hosts virtuales en el sistema objetivo. ¿Cuál es el subdominio completo con el prefijo "a"? Responda usando el dominio completo, por ejemplo, "x.inlanefreight.htb".
 
+<img width="1906" height="769" alt="image" src="https://github.com/user-attachments/assets/60007a3b-3973-4b67-9b33-6ea1c6e2dcd9" />
 
 
 #### Ejecutar ataques de fuerza bruta contra hosts virtuales en el sistema objetivo. ¿Cuál es el subdominio completo con el prefijo "su"? Responda usando el dominio completo, por ejemplo, "x.inlanefreight.htb".
+
+<img width="1857" height="727" alt="image" src="https://github.com/user-attachments/assets/118d2656-7956-4ca2-97ae-29f3ce5b10a4" />
