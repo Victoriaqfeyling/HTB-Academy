@@ -294,6 +294,8 @@ vHosts necesarios para estas preguntas:
 - `app.inlanefreight.local`
 - `dev.inlanefreight.local`
 
+  Agregamos los vHosts al archivo /etc/hosts
+
 #### Determinar la versión de Apache que se ejecuta en app.inlanefreight.local en el sistema de destino. (Formato: 0.0.0)
 
 
