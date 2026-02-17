@@ -300,6 +300,8 @@ vHosts necesarios para estas preguntas:
 
 #### Determinar la versión de Apache que se ejecuta en app.inlanefreight.local en el sistema de destino. (Formato: 0.0.0)
 
+<img width="1230" height="333" alt="image" src="https://github.com/user-attachments/assets/19438ea6-c14d-4a82-98d0-d2c6458102e9" />
+
 
 #### ¿Qué CMS se utiliza en app.inlanefreight.local en el sistema de destino? Responda solo con el nombre, p. ej., WordPress.
 
