@@ -305,6 +305,7 @@ vHosts necesarios para estas preguntas:
 
 #### ¿Qué CMS se utiliza en app.inlanefreight.local en el sistema de destino? Responda solo con el nombre, p. ej., WordPress.
 
+<img width="1911" height="211" alt="image" src="https://github.com/user-attachments/assets/a9a3853c-48d6-48ed-ac97-153f95c88d9b" />
 
 #### ¿En qué sistema operativo se ejecuta el servidor web dev.inlanefreight.local en el sistema de destino? Responda solo con el nombre, p. ej., Debian.
 
