@@ -78,7 +78,9 @@ El contenido HTML puede proporcionar pistas sobre tecnologías subyacentes:
 * Comentarios en el código
 * Estructura específica del CMS
 * Archivos como `license.txt`
-* Scripts cargados
+* Scripts cargadosn y otros elementos.
+
+Por ejemplo puede haber un encabezado de copyright que indique el software específico que se utiliza
 
 ---
 
