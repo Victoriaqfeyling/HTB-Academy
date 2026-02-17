@@ -309,3 +309,5 @@ vHosts necesarios para estas preguntas:
 
 #### ¿En qué sistema operativo se ejecuta el servidor web dev.inlanefreight.local en el sistema de destino? Responda solo con el nombre, p. ej., Debian.
 
+<img width="1338" height="295" alt="image" src="https://github.com/user-attachments/assets/f044c52a-c4ee-4ecd-8d6d-ad5137c89417" />
+
