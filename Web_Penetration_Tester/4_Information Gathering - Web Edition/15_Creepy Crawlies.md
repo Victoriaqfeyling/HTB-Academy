@@ -178,3 +178,16 @@ Las herramientas de crawling automatizado permiten:
 * Priorizar vectores de ataque.
 
 El verdadero valor no está solo en recolectar datos, sino en analizarlos y correlacionarlos con otros hallazgos como fingerprinting, robots.txt y .well-known endpoints.
+
+
+
+
+---
+
+
+# Preguntas
+
+
+#### Después de rastrear inlanefreight.com, identifique la ubicación donde se almacenarán los informes futuros. Responda con el dominio completo, por ejemplo, files.inlanefreight.com.
+
+`Pista`: Quizás haya un comentario al respecto.
