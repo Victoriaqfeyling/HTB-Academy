@@ -191,3 +191,16 @@ El verdadero valor no está solo en recolectar datos, sino en analizarlos y corr
 #### Después de rastrear inlanefreight.com, identifique la ubicación donde se almacenarán los informes futuros. Responda con el dominio completo, por ejemplo, files.inlanefreight.com.
 
 `Pista`: Quizás haya un comentario al respecto.
+
+
+Ejecutamos ReconSpider
+
+```bash
+python3 ReconSpider.py http://inlanefreight.com
+```
+
+Luego analizamos el archivo `results.json`. En el campo comentarios vemos la solución.
+
+<img width="1609" height="486" alt="image" src="https://github.com/user-attachments/assets/52b968fa-18fb-47f9-9ca3-fbd1482a992f" />
+
+
