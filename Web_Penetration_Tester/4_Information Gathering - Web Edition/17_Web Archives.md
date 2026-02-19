@@ -185,27 +185,51 @@ Durante un pentest:
 
 #### ¿Cuántos laboratorios de pruebas de penetración tenía HackTheBox el 8 de agosto de 2018? Responda con un número entero, por ejemplo, 1234
 
+<img width="1593" height="894" alt="image" src="https://github.com/user-attachments/assets/d0dfa118-1e4e-497d-80d7-2a0bf0e79f1e" />
+
+<img width="1593" height="894" alt="image" src="https://github.com/user-attachments/assets/c92af997-0dc9-4f54-9514-30911cf28d5f" />
+
 
 
 #### ¿Cuántos miembros tenía HackTheBox el 10 de junio de 2017? Responde con un número entero, p. ej., 1234.
 
 
+<img width="1593" height="894" alt="image" src="https://github.com/user-attachments/assets/200de3a6-c126-4122-b88b-6776bd4adb1a" />
+
+<img width="1660" height="1011" alt="image" src="https://github.com/user-attachments/assets/2dc904c5-acc8-41ba-a4ce-ff545744b3a3" />
+
 
 #### En marzo de 2002, ¿a qué sitio web redirigía el dominio facebook.com? Responda con el dominio completo, por ejemplo, http://www.facebook.com/
 
+<img width="1660" height="1011" alt="image" src="https://github.com/user-attachments/assets/af902412-145d-4ee4-badf-7f23375a25f2" />
+
+
+<img width="1767" height="1011" alt="image" src="https://github.com/user-attachments/assets/32940a61-ed28-4e3d-90e9-37f4b8c2d26c" />
 
 
 #### Según el sitio web paypal.com en octubre de 1999, ¿qué se podía usar para transferir dinero a cualquier persona? Responda con el nombre del producto, por ejemplo, "Mi Dispositivo". Quite el símbolo ™ de su respuesta.
 
+<img width="1767" height="1011" alt="image" src="https://github.com/user-attachments/assets/e89c7d08-c80a-4749-b48c-668620f9f7c3" />
 
+<img width="1767" height="1011" alt="image" src="https://github.com/user-attachments/assets/2705e218-8cfc-4c11-b132-b0ea8b43438f" />
 
 
 #### Volviendo a noviembre de 1998 en google.com, ¿qué dirección albergaba el "Prototipo de Motor de Búsqueda de Google" no alfa de Google? Responda con la dirección completa, por ejemplo, http://google.com
 
+<img width="1767" height="1011" alt="image" src="https://github.com/user-attachments/assets/81058ed0-829e-4d13-b468-d6b807d91ea6" />
+
+<img width="1908" height="963" alt="image" src="https://github.com/user-attachments/assets/deff2250-40b0-4a70-8282-63f6c45e49af" />
 
 
 #### Volviendo a marzo de 2000 en www.iana.org, ¿cuándo exactamente se actualizó el sitio por última vez? Responda con la fecha en el pie de página, por ejemplo, 11 de marzo de 1999
 
+<img width="1908" height="963" alt="image" src="https://github.com/user-attachments/assets/ed494e60-3448-4abd-865e-1a17c57eb255" />
+
+<img width="1908" height="963" alt="image" src="https://github.com/user-attachments/assets/d1b588ff-6ca4-4ddd-80b8-ebb952f218e2" />
 
 
 #### Según la instantánea de wikipedia.com tomada el 9 de febrero de 2003, ¿en cuántos artículos estaban trabajando ya en la versión en inglés? Responda con el número que indican sin comas, por ejemplo, 100000, no 100000
+
+<img width="1908" height="963" alt="image" src="https://github.com/user-attachments/assets/2f03c8be-db46-4b1a-be9f-db7d32719032" />
+
+<img width="1908" height="963" alt="image" src="https://github.com/user-attachments/assets/82a45873-3190-44bf-a372-f7e4bc1abdea" />
