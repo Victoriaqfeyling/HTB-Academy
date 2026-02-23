@@ -1339,24 +1339,37 @@ apt install smbmap
 smbmap -h
 ```
 
-TODO
+Para realizar un escaneo hacemos:
+```bash
+smbmap -H <ip>
+```
+
+Vemos que listó los shares:
+<img width="1716" height="603" alt="image" src="https://github.com/user-attachments/assets/b8a950e9-3a2f-4d33-a30e-99c946c966a0" />
+
 
 ## crackmapexec
 
+En kali:
+
 ```bash
-apt install -y libxml2-dev libxslt1-dev zlib1g-dev git python3-dev build-essential libssl-dev libffi-dev
-python3 -m venv cme-env
-source cme-env/bin/activate
-git clone https://github.com/byt3bl33d3r/CrackMapExec.git
-cd CrackMapExec
-pip install .
-crackmapexec -h
+apt install crackmapexec
 ```
 
-no funciona.
+`Nota`: El sucesor ahora es `netexec`.
+
+```bash
+crackmapexec smb <IP> --shares -u '' -p ''
+```
+
+Obtenemos más información además de los shares:
+<img width="1795" height="256" alt="image" src="https://github.com/user-attachments/assets/137a8e22-af77-4020-9e71-b111ee9a737f" />
+
+
 
 ## enum4linux
 
+En debian:
 ```bash
 git clone https://github.com/cddmp/enum4linux-ng.git
 cd enum4linux-ng
@@ -1364,6 +1377,8 @@ python3 -m venv enum4linux-env
 source enum4linux-env/bin/activate
 pip3 install -r requirements.txt
 ```
+
+
 
 <img width="901" height="791" alt="image" src="https://github.com/user-attachments/assets/ad39858f-8ddc-45b4-9b85-b562417a1c25" />
 
@@ -1374,3 +1389,11 @@ pip3 install -r requirements.txt
 <img width="901" height="696" alt="image" src="https://github.com/user-attachments/assets/5147a23e-10e8-4750-8d0f-b2ce43794737" />
 
 <img width="901" height="696" alt="image" src="https://github.com/user-attachments/assets/f8ffd404-c0d1-40dd-a101-eeee717d94c3" />
+
+
+---
+
+
+En kali tenemos instalado `enum4linux`:
+
+<img width="1510" height="767" alt="image" src="https://github.com/user-attachments/assets/d18b1d9e-cd12-4b80-a03f-c68ee5d608b1" />
