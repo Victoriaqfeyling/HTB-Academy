@@ -20,6 +20,9 @@ En un RDBMS como MySQL, la información se almacena principalmente en **tablas**
 
 MySQL está diseñado para manejar grandes volúmenes de datos de manera eficiente.
 
+
+[Curso brebe MySql](https://www.w3schools.com/sql/sql_intro.asp)
+
 ---
 
 ## 2. Modelo Cliente–Servidor
@@ -95,8 +98,8 @@ Ejemplo mencionado:
 
 MySQL es muy usado en sitios web dinámicos y suele verse en stacks como:
 
-* **LAMP**: Linux + Apache + MySQL + PHP
-* **LEMP**: Linux + Nginx + MySQL + PHP
+* [**LAMP**](https://en.wikipedia.org/wiki/LAMP_(software_bundle)): Linux + Apache + MySQL + PHP
+* [**LEMP**](https://lemp.io/): Linux + Nginx + MySQL + PHP
 
 En hosting web, MySQL actúa como el “repositorio central” de datos que consumen scripts PHP.
 
@@ -109,7 +112,7 @@ Ejemplos de datos típicos almacenados:
 * Contenido de formularios
 * Valores internos y configuraciones
 
-Nota: MySQL puede almacenar contraseñas en texto plano, pero lo normal es que la app (PHP) las **hashee** antes (one-way encryption).
+Nota: MySQL puede almacenar contraseñas en texto plano, pero lo normal es que la app (PHP) las **hashee** antes ([one-way encryption](https://en.citizendium.org/wiki/One-way_encryption)).
 
 ---
 
@@ -193,13 +196,237 @@ symbolic-links=0
 !includedir /etc/mysql/conf.d/
 ```
 
-### 8.2 Lectura rápida de parámetros importantes
+---
 
-* **port = 3306**: puerto típico MySQL.
-* **user = mysql**: usuario del sistema con el que corre el servicio.
-* **datadir = /var/lib/mysql**: dónde se guardan los datos.
-* **socket = ...mysqld.sock**: socket local (para conexiones locales sin TCP).
-* **skip-name-resolve**: evita resolver DNS; usa IPs directamente (mejora performance / reduce dependencia de DNS).
+
+# 🔎 Estructura General del Archivo
+
+El archivo está dividido en **secciones** indicadas por encabezados entre corchetes:
+
+```
+[client]
+[mysqld_safe]
+[mysqld]
+```
+
+Cada sección aplica a un componente distinto del ecosistema MySQL.
+
+---
+
+# 🖥️ 1️⃣ Sección `[client]`
+
+Esta sección define parámetros para los clientes que se conectan al servidor MySQL (por ejemplo: `mysql`, `mysqldump`, scripts, aplicaciones, etc.).
+
+```
+[client]
+port = 3306
+socket = /var/run/mysqld/mysqld.sock
+```
+
+## 🔹 port = 3306
+
+* Es el puerto TCP en el que el cliente intentará conectarse.
+* **3306 es el puerto estándar de MySQL.**
+* Si el servidor escucha en otro puerto, el cliente debe especificarlo.
+
+⚠️ En auditorías de seguridad, encontrar 3306 expuesto a Internet puede indicar una mala configuración.
+
+## 🔹 socket = /var/run/mysqld/mysqld.sock
+
+* Es el archivo de socket Unix.
+* Se usa para conexiones locales (sin usar TCP/IP).
+* Es más rápido y seguro para conexiones dentro del mismo servidor.
+
+Ejemplo:
+
+```
+mysql -u root -p --socket=/var/run/mysqld/mysqld.sock
+```
+
+---
+
+# 🛡️ 2️⃣ Sección `[mysqld_safe]`
+
+`mysqld_safe` es un wrapper que inicia el servidor MySQL y lo reinicia si se cae.
+
+```
+[mysqld_safe]
+pid-file = /var/run/mysqld/mysqld.pid
+socket = /var/run/mysqld/mysqld.sock
+nice = 0
+```
+
+## 🔹 pid-file
+
+* Guarda el ID del proceso (PID) del servidor.
+* Permite al sistema controlar el servicio.
+* Ejemplo: detenerlo con `kill`.
+
+## 🔹 socket
+
+* Debe coincidir con el definido en otras secciones.
+
+## 🔹 nice = 0
+
+* Define la prioridad del proceso en el sistema Linux.
+* 0 = prioridad normal.
+* Valores positivos → menor prioridad.
+* Valores negativos → mayor prioridad.
+
+---
+
+# 🧠 3️⃣ Sección `[mysqld]` (La más importante)
+
+Esta sección define cómo se comporta el servidor MySQL.
+
+```
+[mysqld]
+skip-host-cache
+skip-name-resolve
+user = mysql
+pid-file = /var/run/mysqld/mysqld.pid
+socket = /var/run/mysqld/mysqld.sock
+port = 3306
+basedir = /usr
+datadir = /var/lib/mysql
+tmpdir = /tmp
+lc-messages-dir = /usr/share/mysql
+explicit_defaults_for_timestamp
+symbolic-links = 0
+```
+
+---
+
+## 🔹 skip-host-cache
+
+* Desactiva la caché de resolución de host.
+* Reduce problemas cuando cambian IPs.
+* Mejora estabilidad en ciertos entornos dinámicos.
+
+---
+
+## 🔹 skip-name-resolve
+
+* MySQL no intentará resolver nombres DNS.
+* Solo trabajará con direcciones IP.
+
+### 🎯 Ventajas:
+
+* Mejora rendimiento.
+* Reduce dependencia de DNS.
+* Evita retrasos si el DNS falla.
+
+### 🔐 En seguridad:
+
+Implica que los permisos deben definirse por IP y no por hostname.
+
+Ejemplo válido:
+
+```
+GRANT ALL ON db.* TO 'user'@'192.168.1.%';
+```
+
+---
+
+## 🔹 user = mysql
+
+* Usuario del sistema Linux con el que corre el servicio.
+* Buenas prácticas: nunca correr MySQL como root.
+* Reduce impacto ante una posible explotación.
+
+---
+
+## 🔹 port = 3306
+
+* Puerto en el que escucha el servidor.
+* Puede modificarse por seguridad ("security through obscurity", aunque no reemplaza controles reales).
+
+---
+
+## 🔹 basedir = /usr
+
+* Directorio base donde está instalado MySQL.
+* Contiene binarios y librerías.
+
+---
+
+## 🔹 datadir = /var/lib/mysql
+
+* Carpeta donde se almacenan las bases de datos.
+* Cada base de datos es un subdirectorio.
+* Cada tabla puede ser un archivo físico.
+
+📁 Ejemplo típico:
+
+```
+/var/lib/mysql/
+  ├── mysql/
+  ├── information_schema/
+  ├── mi_base_de_datos/
+```
+
+🔐 Desde perspectiva ofensiva:
+Si un atacante logra escribir archivos aquí, puede comprometer completamente la base de datos.
+
+---
+
+## 🔹 tmpdir = /tmp
+
+* Directorio para archivos temporales.
+* Usado para operaciones como ORDER BY grandes o joins complejos.
+
+⚠️ Si `/tmp` tiene permisos inseguros, podría haber vectores de abuso.
+
+---
+
+## 🔹 lc-messages-dir
+
+* Directorio de mensajes de error.
+* Define localización e idioma.
+
+---
+
+## 🔹 explicit_defaults_for_timestamp
+
+* Obliga a definir explícitamente valores por defecto para columnas TIMESTAMP.
+* Mejora consistencia.
+
+---
+
+## 🔹 symbolic-links = 0
+
+* Desactiva enlaces simbólicos.
+
+🔐 Importante en seguridad:
+Evita ataques donde se usan symlinks para redirigir archivos sensibles.
+
+---
+
+# 📂 Directiva Final
+
+```
+!includedir /etc/mysql/conf.d/
+```
+
+* Incluye configuraciones adicionales.
+* Permite modularizar configuración.
+* Muchas veces aquí se agregan parámetros personalizados.
+
+---
+
+# 🔐 Perspectiva de Pentesting
+
+Cuando auditamos MySQL, estos parámetros nos permiten inferir:
+
+* Si escucha solo local o remotamente.
+* Dónde están almacenados los datos.
+* Si depende de DNS.
+* Qué usuario del sistema ejecuta el servicio.
+* Posibles vectores locales (tmpdir, datadir, permisos).
+
+---
+
+
 
 ---
 
@@ -244,49 +471,77 @@ Esto puede facilitar:
 * Confirmación de SQLi
 * Escalada a técnicas más avanzadas (SQL Injection)
 
----
-
-# 10. Footprinting del Servicio MySQL
-
-Normalmente MySQL escucha en:
-
-* **TCP/3306**
-
-Exponer MySQL a redes externas **no es buena práctica**.
-
-Aun así, es común encontrarlo expuesto porque:
-
-* Configuración temporal olvidada
-* Workarounds técnicos
-* Errores de firewall
+Más [opciones](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html) de configuración.
 
 ---
 
-## 10.1 Escaneo con Nmap (salida completa)
+
+# 🛠️ Footprinting y Enumeración del Servicio MySQL
+
+
+---
+
+# 1️⃣ Exposición del Servicio MySQL
+
+MySQL generalmente escucha en:
+
+```
+TCP/3306
+```
+
+## 🔎 ¿Por qué puede estar expuesto?
+
+Aunque no es buena práctica exponerlo a Internet, suele ocurrir por:
+
+* Configuraciones temporales olvidadas
+* Problemas técnicos que llevaron a "workarounds"
+* Reglas de firewall mal implementadas
+* Arquitecturas legacy
+* Entornos de desarrollo migrados a producción
+
+⚠️ En producción, MySQL debería:
+
+* Escuchar solo en `127.0.0.1`
+* Estar detrás de una VPN
+* Estar protegido por reglas de firewall estrictas
+
+---
+
+# 2️⃣ Enumeración con Nmap y Scripts NSE
 
 ```bash
 sudo nmap 10.129.14.128 -sV -sC -p3306 --script mysql*
 ```
 
-Salida:
+## 🔍 Qué estamos haciendo exactamente
 
-```text
-Starting Nmap 7.80 ( https://nmap.org ) at 2021-09-21 00:53 CEST
+| Flag            | Función                                              |
+| --------------- | ---------------------------------------------------- |
+| -sV             | Detección de versión                                 |
+| -sC             | Scripts default                                      |
+| -p3306          | Puerto específico                                    |
+| --script mysql* | Ejecuta todos los scripts NSE relacionados con MySQL |
+
+
+`Salida`:
+
+```bash
+tarting Nmap 7.80 ( https://nmap.org ) at 2021-09-21 00:53 CEST
 Nmap scan report for 10.129.14.128
 Host is up (0.00021s latency).
 
 PORT     STATE SERVICE     VERSION
 3306/tcp open  nagios-nsca Nagios NSCA
-| mysql-brute:
-|   Accounts:
+| mysql-brute: 
+|   Accounts: 
 |     root:<empty> - Valid credentials
 |_  Statistics: Performed 45010 guesses in 5 seconds, average tps: 9002.0
 |_mysql-databases: ERROR: Script execution failed (use -d to debug)
 |_mysql-dump-hashes: ERROR: Script execution failed (use -d to debug)
-| mysql-empty-password:
+| mysql-empty-password: 
 |_  root account has empty password
-| mysql-enum:
-|   Valid usernames:
+| mysql-enum: 
+|   Valid usernames: 
 |     root:<empty> - Valid credentials
 |     netadmin:<empty> - Valid credentials
 |     guest:<empty> - Valid credentials
@@ -298,7 +553,7 @@ PORT     STATE SERVICE     VERSION
 |     admin:<empty> - Valid credentials
 |     test:<empty> - Valid credentials
 |_  Statistics: Performed 10 guesses in 1 seconds, average tps: 10.0
-| mysql-info:
+| mysql-info: 
 |   Protocol: 10
 |   Version: 8.0.26-0ubuntu0.20.04.1
 |   Thread ID: 13
@@ -316,186 +571,354 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 11.21 seconds
 ```
 
-### 10.2 Nota importante sobre falsos positivos
+---
 
-Nmap y sus scripts pueden dar **falsos positivos**.
+# 3️⃣ Análisis Técnico de la Salida
 
-Este caso es un ejemplo: Nmap sugiere que `root` tiene password vacío, pero sabemos que **no es cierto**.
+## 🧠 3.1 Detección de Servicio
 
-Por eso siempre hay que validar manualmente.
+```
+3306/tcp open nagios-nsca Nagios NSCA
+```
+
+⚠️ Aquí vemos un posible **service misidentification**.
+
+Nmap puede confundir servicios cuando:
+
+* El banner no es claro
+* El servicio responde parcialmente
+* Hay middleboxes
+
+Siempre validar manualmente.
 
 ---
 
-# 11. Interacción Manual con MySQL
+## 🔐 3.2 mysql-brute
 
-## 11.1 Prueba sin contraseña (fallo esperado)
+Indica credenciales válidas con password vacío:
+
+```
+root:<empty> - Valid credentials
+```
+
+⚠️ Esto puede ser un falso positivo.
+
+¿Por qué?
+
+* Algunos servidores responden diferente al handshake.
+* El script interpreta ciertas respuestas como éxito.
+
+Regla de oro en pentesting:
+
+> Nunca confiar ciegamente en herramientas automatizadas.
+
+---
+
+## 🔎 3.3 mysql-info
+
+Información extremadamente valiosa:
+
+* Protocol: 10
+* Version: 8.0.26
+* Auth Plugin: caching_sha2_password
+* Capabilities Flags
+* Salt (usado en el handshake de autenticación)
+
+### 🎯 Importancia del plugin de autenticación
+
+`caching_sha2_password` es el método moderno por defecto en MySQL 8.
+
+Implica:
+
+* No usa el antiguo `mysql_native_password`
+* Dificulta ciertos ataques offline
+* Cambia comportamiento de autenticación en clientes antiguos
+
+---
+
+# 4️⃣ Validación Manual (Paso Crítico)
+
+## 4.1 Intento sin contraseña
 
 ```bash
 mysql -u root -h 10.129.14.132
 ```
 
-Salida:
+Resultado:
 
-```text
-ERROR 1045 (28000): Access denied for user 'root'@'10.129.14.1' (using password: NO)
+```
+ERROR 1045 (28000): Access denied
 ```
 
 Esto confirma:
 
-* El servidor existe
+* El servicio responde correctamente
 * Requiere autenticación
-* No acepta login sin password para root
+* No acepta password vacío
 
 ---
 
-## 11.2 Login con password válido (ejemplo)
+# 5️⃣ Acceso con Credenciales Válidas
 
 ```bash
 mysql -u root -pP4SSw0rd -h 10.129.14.128
 ```
 
-Salida:
-
-```text
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MySQL connection id is 150165
-Server version: 8.0.27-0ubuntu0.20.04.1 (Ubuntu)                                                         
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.                                     
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.                           
-      
-MySQL [(none)]> show databases;                                                                          
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-| sys                |
-+--------------------+
-4 rows in set (0.006 sec)
-
-
-MySQL [(none)]> select version();
-+-------------------------+
-| version()               |
-+-------------------------+
-| 8.0.27-0ubuntu0.20.04.1 |
-+-------------------------+
-1 row in set (0.001 sec)
-
-
-MySQL [(none)]> use mysql;
-MySQL [mysql]> show tables;
-+------------------------------------------------------+
-| Tables_in_mysql                                      |
-+------------------------------------------------------+
-| columns_priv                                         |
-| component                                            |
-| db                                                   |
-| default_roles                                        |
-| engine_cost                                          |
-| func                                                 |
-| general_log                                          |
-| global_grants                                        |
-| gtid_executed                                        |
-| help_category                                        |
-| help_keyword                                         |
-| help_relation                                        |
-| help_topic                                           |
-| innodb_index_stats                                   |
-| innodb_table_stats                                   |
-| password_history                                     |
-...SNIP...
-| user                                                 |
-+------------------------------------------------------+
-37 rows in set (0.002 sec)
-```
-
-### 11.3 Qué significan estas bases
-
-* `mysql`: base interna con usuarios, permisos y metadata.
-* `sys`: schema con vistas y métricas para administración.
-* `information_schema`: metadata estándar ANSI/ISO.
-* `performance_schema`: métricas de performance.
+Una vez dentro, comienza la fase de **enumeración interna**.
 
 ---
 
-# 12. Exploración del schema `sys` (salida completa)
+# 6️⃣ Bases de Datos Críticas del Sistema
 
 ```sql
-use sys;
-show tables;
+show databases;
 ```
 
-Salida:
+Resultado:
 
-```text
-+-----------------------------------------------+
-| Tables_in_sys                                 |
-+-----------------------------------------------+
-| host_summary                                  |
-| host_summary_by_file_io                       |
-| host_summary_by_file_io_type                  |
-| host_summary_by_stages                        |
-| host_summary_by_statement_latency             |
-| host_summary_by_statement_type                |
-| innodb_buffer_stats_by_schema                 |
-| innodb_buffer_stats_by_table                  |
-| innodb_lock_waits                             |
-| io_by_thread_by_latency                       |
-...SNIP...
-| x$waits_global_by_latency                     |
-+-----------------------------------------------+
+* information_schema
+* mysql
+* performance_schema
+* sys
+
+---
+
+## 🔹 mysql
+
+Contiene:
+
+* Usuarios
+* Hashes
+* Permisos
+* Roles
+
+Tabla crítica:
+
+```
+mysql.user
 ```
 
-Luego:
+⚠️ Desde perspectiva ofensiva:
+Si se logra leer esta tabla → posible extracción de hashes.
+
+---
+
+## 🔹 information_schema
+
+Contiene metadata ANSI/ISO:
+
+* Tablas
+* Columnas
+* Índices
+* Permisos
+
+Es clave para:
+
+* Enumeración silenciosa
+* Reconstrucción de estructura de base
+* Preparación para SQL Injection
+
+---
+
+## 🔹 performance_schema
+
+* Métricas internas
+* Locks
+* Estadísticas
+
+Útil para:
+
+* Análisis forense
+* Detección de actividad
+
+---
+
+## 🔹 sys
+
+Vista simplificada y amigable del performance_schema.
+
+Ejemplo:
 
 ```sql
 select host, unique_users from host_summary;
 ```
 
-Salida:
+Permite identificar:
 
-```text
-+-------------+--------------+                   
-| host        | unique_users |                   
-+-------------+--------------+                   
-| 10.129.14.1 |            1 |                   
-| localhost   |            2 |                   
-+-------------+--------------+                   
-2 rows in set (0,01 sec)
+* Desde qué hosts se conectan usuarios
+* Número de usuarios únicos
+
+Esto puede revelar:
+
+* Movimiento lateral
+* Clientes activos
+* Accesos remotos
+
+---
+
+# 7️⃣ Enumeración Estratégica Post-Login
+
+Una vez autenticados, pasos recomendados:
+
+1. Identificar versión exacta:
+
+   ```sql
+   select version();
+   ```
+
+2. Identificar privilegios actuales:
+
+   ```sql
+   show grants;
+   ```
+
+3. Listar usuarios:
+
+   ```sql
+   select user, host from mysql.user;
+   ```
+
+4. Buscar bases personalizadas:
+
+   ```sql
+   show databases;
+   ```
+
+5. Enumerar tablas sensibles:
+
+   ```sql
+   show tables;
+   ```
+
+---
+
+# 8️⃣ Consideraciones de Seguridad
+
+Durante footprinting MySQL debemos evaluar:
+
+* ¿Está expuesto públicamente?
+* ¿Permite autenticación remota de root?
+* ¿Qué plugin de auth usa?
+* ¿Se usa SSL?
+* ¿Permite LOAD DATA LOCAL?
+* ¿Existen usuarios con host '%'?
+
+---
+
+# 9️⃣ Errores Comunes en Pentesting MySQL
+
+* Confiar en scripts NSE sin validar
+* No revisar plugin de autenticación
+* Ignorar capacidades flags
+* No revisar privilegios actuales
+* No analizar configuración del servidor
+
+---
+
+Para consolidar conocimientos:
+
+* Instalar MySQL en una VM
+* Configurar usuarios con distintos hosts
+* Cambiar plugins de autenticación
+* Activar y desactivar SSL
+* Practicar hardening
+
+---
+
+## Recursos:
+
+- [MySql System Schema manual](https://dev.mysql.com/doc/refman/8.0/en/system-schema.html#:~:text=The%20mysql%20schema%20is%20the,used%20for%20other%20operational%20purposes)
+- [General Security Issues](https://dev.mysql.com/doc/refman/8.0/en/general-security-issues.html)
+
+
+---
+
+# Preeguntas
+
+
+#### Enumerar el servidor MySQL y determinar la versión en uso. (Formato: MySQL XXXX)
+
+Lanzamos una traza `ICMP` al target para verificar que se encuentra activo:
+<img width="538" height="143" alt="image" src="https://github.com/user-attachments/assets/7b2441ac-0ca5-4f76-a698-5a024c18ae25" />
+
+Hacemos un `TCP SYN Scann` con nmap al puerto 3306 para verificar que el servicio se encuentra open:
+
+```bash
+nmap -Pn -n --reason -sS -p3306 10.129.10.41
 ```
 
----
+<img width="566" height="172" alt="image" src="https://github.com/user-attachments/assets/cb5a4d3f-869c-4c36-99eb-6420b83c4418" />
 
-# 13. Comandos esenciales para trabajar con MySQL
+Hacemos un escaneo de versiones al objetivo, lanzamos el script=banner:
+```bash
+nmap -Pn -n --reason -sV --script=banner -p3306 <ip>
+```
 
-| Comando                                              | Descripción                                                              |
-| ---------------------------------------------------- | ------------------------------------------------------------------------ |
-| `mysql -u <user> -p<password> -h <IP address>`       | Conecta al servidor. **No debe haber espacio** entre `-p` y el password. |
-| `show databases;`                                    | Lista todas las bases.                                                   |
-| `use <database>;`                                    | Selecciona una base específica.                                          |
-| `show tables;`                                       | Lista tablas de la base seleccionada.                                    |
-| `show columns from <table>;`                         | Muestra columnas de una tabla.                                           |
-| `select * from <table>;`                             | Muestra todos los registros.                                             |
-| `select * from <table> where <column> = "<string>";` | Busca un valor específico en una columna.                                |
+<img width="768" height="231" alt="image" src="https://github.com/user-attachments/assets/21b74aa5-5c72-4710-82c4-7b16e78cfc72" />
 
----
+Encontramos la versión: `MySQL 8.0.27`
 
-## 14. Conclusión
+Con banner grabbing manual también la obtenemos utilizando `telnet <ip> 3306`:
+<img width="1021" height="163" alt="image" src="https://github.com/user-attachments/assets/6fce8be9-b65c-433f-ab15-ebfad10cf095" />
 
-En footprinting de MySQL, lo importante es:
+También realizandolo con netcat `nc <ip> 3306`:  
 
-* Detectar exposición en red (3306)
-* Identificar versión y plugin de auth
-* No confiar ciegamente en scripts (validar manualmente)
-* Entender qué bases son críticas (`mysql`, `sys`)
-* Con credenciales, explorar de forma controlada
-
-Para consolidar aprendizaje, conviene montar un lab propio (MySQL/MariaDB) y practicar:
-
-* Usuarios y permisos
-* Hardening
-* Logs y configuraciones
+<img width="574" height="133" alt="image" src="https://github.com/user-attachments/assets/1457e05e-14f4-4f6c-8f38-41d7b0a29f4d" />
 
 
+
+Adicionalmente vamos a lanzar todos los scripts NSE de nmap para mysql, primero los buscamos:
+```bash
+find / -type f -name mysql* 2>/dev/null |grep scripts
+```
+<img width="632" height="270" alt="image" src="https://github.com/user-attachments/assets/91ae2fba-f7c8-4bca-97b2-eec2a07d9fa6" />
+
+Lanzamos el escaneo de nmap con todos los scripts correspondientes para `MySql`:
+```bash
+nmap -Pn -n --reason -sV --script mysql* -p3306 10.129.10.41
+```
+
+#### Durante nuestra prueba de penetración, encontramos credenciales débiles "robin:robin". Deberíamos probarlas con el servidor MySQL. ¿Cuál es la dirección de correo electrónico del cliente "Otto Lang"?
+
+
+Nos conectamos al servidor MySql con las credenciales obtenidas `robin:robin`:
+
+```bash
+mysql -u robin -probin -h <ip>
+```
+<img width="1171" height="114" alt="image" src="https://github.com/user-attachments/assets/c4d258b9-0a2c-4e1d-ad6b-777477550d1c" />  
+
+
+Nos dice que el servidor tiene un certificado autofirmado y nuestro cliente no confía. Probamos esquivar la autenticación con ssl:
+```bash
+mysql -u robin -probin -h <ip> --skip-ssl
+```
+Ingresamos al servidor, esto significa que el servidor no obliga SSL estrictamente:  
+
+<img width="1169" height="363" alt="image" src="https://github.com/user-attachments/assets/6a8ec067-9215-41d0-91cb-b17f0f1555c4" />
+
+
+
+Enumeramos las bases de datos del servidor con `show databases;`:  
+
+<img width="484" height="353" alt="image" src="https://github.com/user-attachments/assets/a8b6288d-dfc5-44bc-b5c5-e77e4c7d62f5" />
+
+Vemos una base de datos llamada `customers` que llama la atención, ingresamos a ella con el comando `use customers`:  
+
+<img width="946" height="197" alt="image" src="https://github.com/user-attachments/assets/2cfdd969-c1f6-4b64-a991-64c2079fbefa" />
+
+
+Enumeramos las tablas con `show tables;`:  
+
+<img width="528" height="221" alt="image" src="https://github.com/user-attachments/assets/a107b14a-1c9f-4004-ad56-a076f3639110" />
+
+La base de datos tiene una tabla llamada `myTable`. Observamos su contenido con `describe myTable;`:  
+
+<img width="1207" height="424" alt="image" src="https://github.com/user-attachments/assets/9889d507-c8fd-49f2-874e-077e3a567d9a" />
+
+Consultamos el mail de Otto Lang con el comando `SELECT email from myTable WHERE name="Otto Lang";
+`:  
+
+<img width="1056" height="216" alt="image" src="https://github.com/user-attachments/assets/22f9d3ee-23d8-48b2-9fa1-043c69ca4456" />
+
+Encontramos que la dirección de correo de Otto Lang es `ultrices@google.htb`.
