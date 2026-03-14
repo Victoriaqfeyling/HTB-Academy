@@ -17,6 +17,8 @@ listado.aspx
 detalle.aspx
 
 
+ffuf -u https://www.siogranos.com.ar/BackendBsAs/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+
 
 
 
