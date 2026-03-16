@@ -1,28 +1,5 @@
 # IPMI – Intelligent Platform Management Interface
 
-admin.aspx
-default.aspx
-menu.aspx
-home.aspx
-principal.aspx
-usuarios.aspx
-reportes.aspx
-reportviewer.aspx
-exportar.aspx
-panel.aspx
-dashboard.aspx
-config.aspx
-consulta.aspx
-listado.aspx
-detalle.aspx
-
-
-ffuf -u https://www.siogranos.com.ar/BackendBsAs/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
-
-
-
-
-
 ---
 
 ## 📌 Introducción
