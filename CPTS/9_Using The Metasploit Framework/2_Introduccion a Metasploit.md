@@ -470,7 +470,7 @@ auxiliary/scanner/smb/smb_version  # Detecta versión de SMB
 
 ```bash
 # Ejemplo
-encoders/x86/shikata_ga_nai  # Codificador polimórfico popular
+encoder/x86/shikata_ga_nai  # Codificador polimórfico popular
 ```
 
 #### 3️⃣ **Evasion** (Evasión)
@@ -854,16 +854,6 @@ Conocer la arquitectura permite:
 6. Las **herramientas** son ejecutables de línea de comandos
 7. Conocer la arquitectura es fundamental para uso efectivo
 
----
-
-## 🚀 Próximos Pasos
-
-En las siguientes secciones, profundizaremos en:
-- Uso práctico de msfconsole
-- Configuración de módulos
-- Ejecución de exploits
-- Gestión de sesiones
-- Técnicas de post-explotación
 
 ---
 
@@ -878,7 +868,7 @@ ls /usr/share/metasploit-framework/documentation/
 ### Comunidad
 - GitHub: https://github.com/rapid7/metasploit-framework
 - Foros: https://github.com/rapid7/metasploit-framework/discussions
-- Wiki: https://github.com/rapid7/metasploit-framework/wiki
+- Wiki: https://docs.metasploit.com/
 
 ### Comandos Útiles para Exploración
 
@@ -895,4 +885,12 @@ tree -L 2 /usr/share/metasploit-framework/
 
 ---
 
-**¡Continuaremos profundizando en cada aspecto de Metasploit en las próximas secciones!** 🎯
+# Preguntas
+
+#### ¿Qué versión de Metasploit viene equipada con una interfaz gráfica de usuario (GUI)?
+
+`Metasploit Pro`
+
+#### ¿Qué comando utilizas para interactuar con la versión gratuita de Metasploit?
+
+`msfconsole`
