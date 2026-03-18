@@ -408,7 +408,7 @@ Esta es la **ubicación base** donde se encuentran todos los archivos relacionad
 
 **Función**: Recurso de aprendizaje y referencia
 
-### 3. **Lib** (Library - Biblioteca)
+### 3. **Lib** (Biblioteca)
 
 **Propósito**: Bibliotecas de código Ruby
 
